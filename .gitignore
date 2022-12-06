@@ -1,3 +1,5 @@
 .vscode
 lib
 jar-library
+/App.class
+/Mosso.class

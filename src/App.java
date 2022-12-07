@@ -94,7 +94,18 @@ Hyperlink hSign=new Hyperlink("sign up");
 hSign.setTextFill(Color.BLUE);
 hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
 
-//sign up stage
+
+//sign up Scene //fiya kelshi
+
+ImageView imageTrip=new ImageView("trip.gif");
+imageTrip.setFitHeight(300);
+imageTrip.setFitWidth(500);
+
+VBox vTrip=new VBox(50);
+vTrip.setAlignment(Pos.CENTER);
+vTrip.setPadding(new Insets(15, 15, 15, 15));
+vTrip.setStyle("-fx-background-color: AliceBlue");
+vTrip.getChildren().add(imageTrip);
 
 Label l2=new Label("Name:");
 TextField tfSignup=new TextField();
@@ -108,9 +119,15 @@ Label l5=new Label("Age:");
 TextField tf5Signup=new TextField();
 tf5Signup.setPromptText ("enter your age");
 
-Label l6=new Label("Password:");
-TextField tf6Signup=new TextField();
-tf6Signup.setPromptText ("enter new password");
+Label passSignUp=new Label("Password:");
+PasswordField pwSign=new PasswordField();
+
+pwSign.setPromptText("password") ;
+
+Button ShowPass=new Button("(9)");
+ShowPass.setOnMousePressed(e->{
+	pwSign.setVisible(true);
+});
 
 Label l7=new Label("address");
 TextField tf7Signup=new TextField();
@@ -144,11 +161,14 @@ Gpane.add(tf7Signup, 4, 2);
 Gpane.add(l3, 0, 3);
 Gpane.add(tf3Signup, 1, 3);
 
-Gpane.add(l6, 3, 3);
-Gpane.add(tf6Signup, 4, 3);
+Gpane.add( passSignUp, 3, 3);
+Gpane.add(pwSign, 4, 3);
+
+Gpane.add( ShowPass, 5, 3);
 
 BorderPane pane =new BorderPane();
 pane.setCenter(Gpane);
+pane.setTop(vTrip);
 
 Scene scene=new Scene(pane,600,600);
 ;

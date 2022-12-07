@@ -147,23 +147,13 @@ Gpane.add(tf3Signup, 1, 3);
 Gpane.add(l6, 3, 3);
 Gpane.add(tf6Signup, 4, 3);
 
-
-
-
-
-
-
-
-
-
 BorderPane pane =new BorderPane();
 pane.setCenter(Gpane);
 
 Scene scene=new Scene(pane,600,600);
-Stage stage=new Stage();
-stage.setScene(scene);
+;
 
-hSign.setOnMouseClicked(e ->stage.show()
+hSign.setOnMouseClicked(e ->window.setScene(scene)
 		
 	
 );
@@ -187,8 +177,8 @@ bo.setBottom(VSignUp);
 
 
 Scene scenee=new Scene( bo, 350,520) ;
-
-window. setScene( scenee) ;
+window.setTitle("MARP Airlines");
+window.setScene( scenee) ;
 window.setResizable(false);
 window.show() ;
 }

@@ -190,7 +190,11 @@ pane.setTop(vTrip);
 Scene scene=new Scene(pane,600,600);
 ;
 
-hSign.setOnMouseClicked(e ->window.setScene(scene)
+
+hSign.setOnMouseClicked(e ->{
+	window.setScene(scene);
+	window.setResizable(true);
+}
 		
 	
 );

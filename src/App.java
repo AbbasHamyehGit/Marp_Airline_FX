@@ -1,3 +1,5 @@
+
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -34,8 +36,8 @@ GridPane grid=new GridPane();
 
 grid.setAlignment(Pos.CENTER);
 grid.setVgap (10);
-grid.setHgap(16);
-grid.setPadding(new Insets(10)) ;
+grid.setHgap(-35);
+grid.setPadding(new Insets(5)) ;
 
 Text welcomeTxt = new Text ("Welcome") ;
 welcomeTxt.setFont(Font.font( "Tehoma",FontWeight.LIGHT,25));
@@ -70,6 +72,7 @@ v1.setFitWidth(350);
 
 GridPane p1=new GridPane();
 
+
 p1.setAlignment(Pos.CENTER);
 p1.add(v1, 0, 0);
 
@@ -85,7 +88,9 @@ bo.setTop(p1);
 
 
 Scene scene=new Scene( bo, 350,500) ;
+
 window. setScene( scene) ;
+window.setResizable(false);
 window.show() ;
 }
 public static void main(String [] args) {

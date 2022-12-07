@@ -1,9 +1,8 @@
 {
     "java.project.sourcePaths": [
-        ".vscode/src",
         "src"
     ],
-    "java.project.outputPath": "bin",
+    "java.project.outputPath": "",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.base.jar",
@@ -13,6 +12,7 @@
         "c:\\javafx-sdk-19\\lib\\javafx.media.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.swing.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.web.jar",
-        "c:\\javafx-sdk-19\\lib\\javafx-swt.jar"
-    ]
+        "c:\\javafx-sdk-19\\lib\\javafx-swt.jar",
+        "c:\\javafx-sdk-19\\lib\\mysql-connector-j-8.0.31.jar"
+    ],
 }

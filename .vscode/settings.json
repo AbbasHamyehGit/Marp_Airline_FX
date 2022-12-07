@@ -1,9 +1,9 @@
 {
+    "java.dependency.packagePresentation": "hierarchical",
     "java.project.sourcePaths": [
-        ".vscode/src",
         "src"
     ],
-    "java.project.outputPath": "bin",
+    "java.project.outputPath": "",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.base.jar",

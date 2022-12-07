@@ -19,4 +19,4 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 
 ## VM ARGS
 
-"vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-module javafx.controls,javafx.fxml"
+"vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"

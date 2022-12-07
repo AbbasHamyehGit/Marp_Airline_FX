@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout . StackPane;
 import javafx.scene.layout.VBox ;
 import javafx.scene.paint.Color;
@@ -93,6 +94,81 @@ Hyperlink hSign=new Hyperlink("sign up");
 hSign.setTextFill(Color.BLUE);
 hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
 
+//sign up stage
+
+Label l2=new Label("Name:");
+TextField tfSignup=new TextField();
+tfSignup.setPromptText ("enter your Name");
+
+Label l4=new Label("Last name:");
+TextField tf4Signup=new TextField();
+tf4Signup.setPromptText("enter your Last name");
+
+Label l5=new Label("Age:");
+TextField tf5Signup=new TextField();
+tf5Signup.setPromptText ("enter your age");
+
+Label l6=new Label("Password:");
+TextField tf6Signup=new TextField();
+tf6Signup.setPromptText ("enter new password");
+
+Label l7=new Label("address");
+TextField tf7Signup=new TextField();
+tf7Signup.setPromptText ("enter your address");
+
+Label l3=new Label("Email");
+TextField tf3Signup=new TextField();
+tf3Signup.setPromptText ("enter your email");
+
+GridPane Gpane=new GridPane();
+Gpane.setStyle("-fx-background-color: SteelBlue");
+
+Gpane.setAlignment(Pos.CENTER);
+Gpane.setVgap (10);
+Gpane.setHgap(10);
+Gpane.setPadding(new Insets(5)) ;
+
+Gpane.add(l2, 0, 1);
+Gpane.add(tfSignup, 1, 1);
+
+Gpane.add(l4, 0, 2);
+Gpane.add(tf4Signup, 1, 2);
+
+Gpane.add(l5, 3, 1);
+Gpane.add(tf5Signup, 4, 1);
+
+
+Gpane.add(l7, 3, 2);
+Gpane.add(tf7Signup, 4, 2);
+
+Gpane.add(l3, 0, 3);
+Gpane.add(tf3Signup, 1, 3);
+
+Gpane.add(l6, 3, 3);
+Gpane.add(tf6Signup, 4, 3);
+
+
+
+
+
+
+
+
+
+
+BorderPane pane =new BorderPane();
+pane.setCenter(Gpane);
+
+Scene scene=new Scene(pane,600,600);
+Stage stage=new Stage();
+stage.setScene(scene);
+
+hSign.setOnMouseClicked(e ->stage.show()
+		
+	
+);
+
+
 Label lAcc=new Label();
 lAcc.setText("Don't have an account?");
 lAcc.setFont(Font.font("Tehoma",FontWeight.LIGHT,17));
@@ -110,9 +186,9 @@ bo.setBottom(VSignUp);
 
 
 
-Scene scene=new Scene( bo, 350,520) ;
+Scene scenee=new Scene( bo, 350,520) ;
 
-window. setScene( scene) ;
+window. setScene( scenee) ;
 window.setResizable(false);
 window.show() ;
 }

@@ -62,10 +62,19 @@ PasswordField pwBox=new PasswordField();
 pwBox.setPromptText("password") ;
 grid.add(pwBox, 1, 2);
 
+GridPane Gpane3=new GridPane();
+Scene scene3=new Scene(Gpane3);
+
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
-    System.out.println("Login button pressed");
+    if(txtUser.getText()==txtUser.getText() || pwBox.getText()==pwBox.getText()) {
+    	window.setScene(scene3);
+    	window.setResizable(true);
+    }
+    else
+    	txtUser.setText("userName or password are incorrect!");
+        
 });
 Button Clear=new Button("Clear") ;
 grid.add(Clear, 2, 3);
@@ -90,22 +99,7 @@ b1.setPadding(new Insets(15, 15, 15, 15));
 b1.setStyle("-fx-background-color: SteelBlue");
 b1.getChildren().add(grid);
 
-Hyperlink hSign=new Hyperlink("sign up");
-hSign.setTextFill(Color.BLUE);
-hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
 
-
-//sign up Scene //fiya kelshi
-
-ImageView imageTrip=new ImageView("trip.gif");
-imageTrip.setFitHeight(300);
-imageTrip.setFitWidth(500);
-
-VBox vTrip=new VBox(50);
-vTrip.setAlignment(Pos.CENTER);
-vTrip.setPadding(new Insets(15, 15, 15, 15));
-vTrip.setStyle("-fx-background-color: AliceBlue");
-vTrip.getChildren().add(imageTrip);
 
 Label l2=new Label("Name:");
 TextField tfSignup=new TextField();
@@ -181,7 +175,22 @@ Gpane.add( ShowPass, 5, 3);
 
 Gpane.add(LshowPass, 6, 3);
 
+Hyperlink hSign=new Hyperlink("sign up");
+hSign.setTextFill(Color.BLUE);
+hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
 
+
+//sign up Scene //fiya kelshi
+
+ImageView imageTrip=new ImageView("trip.gif");
+imageTrip.setFitHeight(300);
+imageTrip.setFitWidth(500);
+
+VBox vTrip=new VBox(50);
+vTrip.setAlignment(Pos.CENTER);
+vTrip.setPadding(new Insets(15, 15, 15, 15));
+vTrip.setStyle("-fx-background-color: AliceBlue");
+vTrip.getChildren().add(imageTrip);
 
 BorderPane pane =new BorderPane();
 pane.setCenter(Gpane);

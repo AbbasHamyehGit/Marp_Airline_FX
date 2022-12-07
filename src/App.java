@@ -1,18 +1,25 @@
 
 
+import java.util.List;
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
 import javafx.application.Application ;
 import javafx.scene.Scene ;
 import javafx.scene .control.Button ;
 import javafx.scene.control.Label ;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -27,10 +34,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage ;
 
 public class App extends Application {
-Stage window;
+Scanner input = new Scanner(System.in);
 @Override
 public void start(Stage primaryStage) {
-window=primaryStage;
+ Stage window=primaryStage;
 
 window.setTitle("Login Form Window");
 
@@ -61,12 +68,21 @@ grid.add(lblPassword, 0, 2);
 PasswordField pwBox=new PasswordField();
 pwBox.setPromptText("password") ;
 grid.add(pwBox, 1, 2);
+ 
+GridPane Gpane3 =new GridPane();
+Scene scene3=new Scene(Gpane3);
 
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
-LoginBtn.setOnAction(e ->{
-    System.out.println("Login button pressed");
-});
+//check for the database part
+//LoginBtn.setOnAction(e ->{
+//    if(txtUser.getText()==txtUser.getText() || pwBox.getText()==pwBox.getText()) {
+//    	window.setScene(scene3);
+//    	window.setResizable(true);
+//    } else
+//    	txtUser.setText("userName or password are incorrect!");
+//    
+//});
 Button Clear=new Button("Clear") ;
 grid.add(Clear, 2, 3);
 Clear.setOnAction(e ->{
@@ -89,13 +105,96 @@ VBox b1=new VBox();
 b1.setPadding(new Insets(15, 15, 15, 15));
 b1.setStyle("-fx-background-color: SteelBlue");
 b1.getChildren().add(grid);
+//sign up Scene //fiya kelshi
+
+
+Label Name=new Label("Name:");
+TextField TfName=new TextField();
+TfName.setPromptText ("enter your Name");
+
+Label Lname=new Label("Last name:");
+TextField TfLname=new TextField();
+TfLname.setPromptText("enter your Last name");
+
+Label Age=new Label("Age:");
+TextField TfAge=new TextField();
+TfAge.setPromptText ("enter your age");
+
+Label passSignUp=new Label("Password:");
+PasswordField TfPass=new PasswordField();
+TfPass.setPromptText("password") ;
+Label LshowPass=new Label("your Pass");
+LshowPass.setTextFill(Color.BLACK);
+
+Button ShowPass=new Button("(6)");
+ShowPass.setOnMousePressed(e->{
+	if(TfPass.getLength()!=0) {
+		LshowPass.setText(TfPass.getText());
+		LshowPass.setTextFill(Color.RED);
+	}
+
+});
+ShowPass.setOnMouseReleased(e->{
+	LshowPass.setText("your Pass");
+	LshowPass.setTextFill(Color.BLACK);
+});
+Label address=new Label("address");
+TextField TfAddress=new TextField();
+TfAddress.setPromptText ("enter your address");
+
+Label email=new Label("Email");
+TextField TfEmail=new TextField();
+TfEmail.setPromptText ("enter your email");
+
+//creating buttons for the sign up scene
+Button Save =new Button("Save");
+Button Clear1 =new Button("Clear");
+Clear1.setOnAction(e ->{
+	TfName.clear();
+	TfLname.clear();
+	TfAge.clear();
+	TfPass.clear();
+	TfAddress.clear();
+	TfEmail.clear();
+	});
+Button Cancel = new Button ("Cancel");
+
+GridPane Gpane=new GridPane();
+Gpane.setStyle("-fx-background-color: SteelBlue");
+
+Gpane.setAlignment(Pos.CENTER);
+Gpane.setVgap (10);
+Gpane.setHgap(10);
+Gpane.setPadding(new Insets(5)) ;
+
+Gpane.add(Name, 0, 1);
+Gpane.add(TfName, 1, 1);
+
+Gpane.add(Lname, 0, 2);
+Gpane.add(TfLname, 1, 2);
+
+Gpane.add(Age, 3, 1);
+Gpane.add(TfAge, 4, 1);
+
+
+Gpane.add(address, 3, 2);
+Gpane.add(TfAddress, 4, 2);
+
+Gpane.add(email, 0, 3);
+Gpane.add(TfEmail, 1, 3);
+
+Gpane.add( passSignUp, 3, 3);
+Gpane.add(TfPass, 4, 3);
+
+Gpane.add( ShowPass, 5, 3);
+Gpane.add(Save, 1,4);
+Gpane.add(Cancel, 3,4);
+Gpane.add(Clear1, 4, 4);
+Gpane.add(LshowPass,6,3);
 
 Hyperlink hSign=new Hyperlink("sign up");
 hSign.setTextFill(Color.BLUE);
 hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
-
-
-//sign up Scene //fiya kelshi
 
 ImageView imageTrip=new ImageView("trip.gif");
 imageTrip.setFitHeight(300);
@@ -106,100 +205,16 @@ vTrip.setAlignment(Pos.CENTER);
 vTrip.setPadding(new Insets(15, 15, 15, 15));
 vTrip.setStyle("-fx-background-color: AliceBlue");
 vTrip.getChildren().add(imageTrip);
-
-Label l2=new Label("Name:");
-TextField tfSignup=new TextField();
-tfSignup.setPromptText ("enter your Name");
-
-Label l4=new Label("Last name:");
-TextField tf4Signup=new TextField();
-tf4Signup.setPromptText("enter your Last name");
-
-Label l5=new Label("Age:");
-TextField tf5Signup=new TextField();
-tf5Signup.setPromptText ("enter your age");
-
-Label passSignUp=new Label("Password:");
-PasswordField pwSign=new PasswordField();
-
-
-pwSign.setPromptText("password") ;
-
-
-Label LshowPass=new Label("your Pass");
-LshowPass.setTextFill(Color.BLACK);
-
-Button ShowPass=new Button("(6)");
-ShowPass.setOnMousePressed(e->{
-	if(pwSign.getLength()!=0) {
-		LshowPass.setText(pwSign.getText());
-		LshowPass.setTextFill(Color.RED);
-	}
-
-});
-ShowPass.setOnMouseReleased(e->{
-	LshowPass.setText("your Pass");
-	LshowPass.setTextFill(Color.BLACK);
-});
-
-Label l7=new Label("address");
-TextField tf7Signup=new TextField();
-tf7Signup.setPromptText ("enter your address");
-
-Label l3=new Label("Email");
-TextField tf3Signup=new TextField();
-tf3Signup.setPromptText ("enter your email");
-
-GridPane Gpane=new GridPane();
-Gpane.setStyle("-fx-background-color: SteelBlue");
-
-Gpane.setAlignment(Pos.CENTER);
-Gpane.setVgap (10);
-Gpane.setHgap(10);
-Gpane.setPadding(new Insets(5)) ;
-
-Gpane.add(l2, 0, 1);
-Gpane.add(tfSignup, 1, 1);
-
-Gpane.add(l4, 0, 2);
-Gpane.add(tf4Signup, 1, 2);
-
-Gpane.add(l5, 3, 1);
-Gpane.add(tf5Signup, 4, 1);
-
-
-Gpane.add(l7, 3, 2);
-Gpane.add(tf7Signup, 4, 2);
-
-Gpane.add(l3, 0, 3);
-Gpane.add(tf3Signup, 1, 3);
-
-Gpane.add( passSignUp, 3, 3);
-Gpane.add(pwSign, 4, 3);
-
-Gpane.add( ShowPass, 5, 3);
-
-Gpane.add(LshowPass, 6, 3);
-
-
-
 BorderPane pane =new BorderPane();
 pane.setCenter(Gpane);
 pane.setTop(vTrip);
 
 Scene scene=new Scene(pane,600,600);
-;
-
 
 hSign.setOnMouseClicked(e ->{
-	window.setScene(scene);
-	window.setResizable(true);
-}
-		
-	
-);
-
-
+window.setScene(scene);
+window.setResizable(true);
+});
 Label lAcc=new Label();
 lAcc.setText("Don't have an account?");
 lAcc.setFont(Font.font("Tehoma",FontWeight.LIGHT,17));
@@ -218,9 +233,22 @@ bo.setBottom(VSignUp);
 
 
 Scene scenee=new Scene( bo, 350,520) ;
+Cancel.setOnAction(e ->{
+	  RadioButton Sure = new RadioButton("Sure");
+	    RadioButton No = new RadioButton("No");
+	    Gpane.add(Sure,4 , 5);
+	Gpane.add(No, 4, 6);
+	Sure.setOnAction(ev ->{
+		window.setScene(scenee);
+	});
+	No.setOnAction(eve->{
+		window.setScene(scene);
+	});
+	
+	
+});
 window.setTitle("MARP Airlines");
-window.setScene( scenee) ;
-window.setResizable(false);
+window.setScene(scenee) ;
 window.show() ;
 }
 public static void main(String [] args) {

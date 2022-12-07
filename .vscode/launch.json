@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch JDBC",
+            "request": "launch",
+            "mainClass": "JDBC",
+            "projectName": "Marp_Airline_FX-6_8eea6b48"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",

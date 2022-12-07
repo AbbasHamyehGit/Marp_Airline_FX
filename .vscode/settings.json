@@ -1,4 +1,12 @@
+
 {
+
+    "java.project.sourcePaths": [
+        "mosso"
+    ],
+    "java.project.outputPath": "bin",
+
+
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.base.jar",

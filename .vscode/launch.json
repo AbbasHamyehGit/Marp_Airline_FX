@@ -9,9 +9,16 @@
             "name": "Launch mosso",
             "request": "launch",
             "mainClass": "mosso",
-            "projectName": "JavaFx-7_61efb6df",
+            "projectName": "JavaFx-8_61efb6e0",
             "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-module"
         },
-        
+        {
+            "type": "java",
+            "name": "Launch mosso",
+            "request": "launch",
+            "mainClass": "mosso",
+            "projectName": "JavaFx-7_61efb6df",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-module"
+        }
     ]
 }

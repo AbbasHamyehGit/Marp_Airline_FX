@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.application.Application ;
 import javafx.scene.Scene ;
 import javafx.scene .control.Button ;
@@ -35,7 +36,7 @@ window.setTitle("Login Form Window");
 GridPane grid=new GridPane();
 
 grid.setAlignment(Pos.CENTER);
-grid.setVgap (10);
+grid.setVgap (5);
 grid.setHgap(-35);
 grid.setPadding(new Insets(5)) ;
 
@@ -65,6 +66,13 @@ grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
     System.out.println("Login button pressed");
 });
+Button Clear=new Button("Clear") ;
+grid.add(Clear, 2, 3);
+Clear.setOnAction(e ->{
+    txtUser.clear();
+    pwBox.clear();
+    
+});
 
 ImageView v1=new ImageView("MARP Airlines.png");
 v1.setFitHeight(300);
@@ -81,13 +89,28 @@ b1.setPadding(new Insets(15, 15, 15, 15));
 b1.setStyle("-fx-background-color: SteelBlue");
 b1.getChildren().add(grid);
 
+Hyperlink hSign=new Hyperlink("sign up");
+hSign.setTextFill(Color.BLUE);
+hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
+
+Label lAcc=new Label();
+lAcc.setText("Don't have an account?");
+lAcc.setFont(Font.font("Tehoma",FontWeight.LIGHT,17));
+
+VBox VSignUp=new VBox();
+VSignUp.setStyle("-fx-background-color: SteelBlue");
+VSignUp.setAlignment(Pos.CENTER);
+VSignUp.getChildren().addAll(lAcc,hSign);
+
+
 BorderPane bo=new BorderPane();
 bo.setCenter(b1);
 bo.setTop(p1);
+bo.setBottom(VSignUp);
 
 
 
-Scene scene=new Scene( bo, 350,500) ;
+Scene scene=new Scene( bo, 350,520) ;
 
 window. setScene( scene) ;
 window.setResizable(false);
@@ -95,6 +118,7 @@ window.show() ;
 }
 public static void main(String [] args) {
 launch(args) ;
+
 }
 
 }

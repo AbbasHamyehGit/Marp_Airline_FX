@@ -18,9 +18,15 @@ public class JDBC {
       ) {		      
          String sql = "CREATE DATABASE ROY";
          stmt.executeUpdate(sql);
+         String sql2 = "INSERT INTO student " + "VALUES ()";
+         stmt.executeUpdate(sql2);
          System.out.println("Database created successfully...");   	  
       } catch (SQLException e) {
          e.printStackTrace();
       } 
-   }
-}
+
+
+
+      
+
+}}

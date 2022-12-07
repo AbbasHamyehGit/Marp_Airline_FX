@@ -24,8 +24,19 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage ;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+  
+
 
 public class App extends Application {
+static final String DB_URL = "jdbc:mysql://localhost/JDBC";
+   static final String USER = "root";
+   static final String PASS = "NewPassword";
+
 Stage window;
 @Override
 public void start(Stage primaryStage) {
@@ -51,21 +62,44 @@ grid.add(lblUser, 0, 1);
 
 TextField txtUser=new TextField();
 txtUser.setPromptText ("username");
+// String user = String.valueOf(txtUser.getText());
 grid.add(txtUser, 1, 1);
 
 Label lblPassword=new Label ("Password:") ;
 lblPassword.setTextFill(Color.ALICEBLUE);
+
 grid.add(lblPassword, 0, 2);
 
 PasswordField pwBox=new PasswordField();
 pwBox.setPromptText("password") ;
+// String password = pwBox.getText();
+//  String password = String.valueOf(pwBox.getText());
 grid.add(pwBox, 1, 2);
 
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
     System.out.println("Login button pressed");
+    
+
+    try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);)
+         
+       {	
+        String user = String.valueOf(txtUser.getText());
+         String password = String.valueOf(pwBox.getText());
+
+        Statement stmt = conn.createStatement();	      
+         String sql = "INSERT INTO olduser (user,pass) VALUES ('" +user+ "','" + password  + "')";
+         stmt.executeUpdate(sql);
+         System.out.println("new record successfully inserted ... ");   	  
+      } catch (SQLException t) {
+         t.printStackTrace();
+      } 
 });
+
+
+
+
 Button Clear=new Button("Clear") ;
 grid.add(Clear, 2, 3);
 Clear.setOnAction(e ->{
@@ -105,6 +139,7 @@ tf4Signup.setPromptText("enter your Last name");
 
 Label l5=new Label("Age:");
 TextField tf5Signup=new TextField();
+
 tf5Signup.setPromptText ("enter your age");
 
 Label l6=new Label("Password:");
@@ -126,6 +161,7 @@ Gpane.setAlignment(Pos.CENTER);
 Gpane.setVgap (10);
 Gpane.setHgap(10);
 Gpane.setPadding(new Insets(5)) ;
+
 
 Gpane.add(l2, 0, 1);
 Gpane.add(tfSignup, 1, 1);

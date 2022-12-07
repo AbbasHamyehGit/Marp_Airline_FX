@@ -6,17 +6,10 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch JDBC",
-            "request": "launch",
-            "mainClass": "JDBC",
-            "projectName": "Marp_Airline_FX-6_8eea6b48"
-        },
-        {
-            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "Marp_Airline_FX-6_8eea6b48",
+            "projectName": "Marp_Airline_FX-8_8eea6b4a",
             "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
@@ -24,7 +17,7 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "src.App",
-            "projectName": "Marp_Airline_FX-6_8eea6b48",
+            "projectName": "Marp_Airline_FX-8_8eea6b4a",
             "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {

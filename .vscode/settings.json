@@ -1,12 +1,9 @@
-
 {
-
     "java.project.sourcePaths": [
-        "mosso"
+        ".vscode/src",
+        "src"
     ],
     "java.project.outputPath": "bin",
-
-
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.base.jar",

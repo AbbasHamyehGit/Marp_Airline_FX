@@ -121,23 +121,25 @@ tf5Signup.setPromptText ("enter your age");
 
 Label passSignUp=new Label("Password:");
 PasswordField pwSign=new PasswordField();
-pwSign.setMinSize(4, 4);
-pwSign.setMaxSize(12, 12);
+
 
 pwSign.setPromptText("password") ;
 
 
-Label LshowPass=new Label("your pass");
+Label LshowPass=new Label("your Pass");
+LshowPass.setTextFill(Color.BLACK);
 
-Button ShowPass=new Button("(9)");
+Button ShowPass=new Button("(6)");
 ShowPass.setOnMousePressed(e->{
 	if(pwSign.getLength()!=0) {
 		LshowPass.setText(pwSign.getText());
+		LshowPass.setTextFill(Color.RED);
 	}
 
 });
 ShowPass.setOnMouseReleased(e->{
 	LshowPass.setText("your Pass");
+	LshowPass.setTextFill(Color.BLACK);
 });
 
 Label l7=new Label("address");

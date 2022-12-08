@@ -86,27 +86,19 @@ pwBox.setPromptText("password") ;
 // String password = pwBox.getText();
 //  String password = String.valueOf(pwBox.getText());
 grid.add(pwBox, 1, 2);
-<<<<<<< HEAD
 
 GridPane Gpane3=new GridPane();
 Scene scene3=new Scene(Gpane3,600,600);
-=======
- 
-GridPane Gpane3 =new GridPane();
-Scene scene3=new Scene(Gpane3);
->>>>>>> bff7f892f7c1b320dd415cd9a47987e8118471a4
 
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
-<<<<<<< HEAD
     
     	window.setScene(scene3);
     	window.setResizable(true);
     
    
         
-=======
     System.out.println("Login button pressed");
     
 
@@ -123,7 +115,6 @@ LoginBtn.setOnAction(e ->{
       } catch (SQLException t) {
          t.printStackTrace();
       } 
->>>>>>> bff7f892f7c1b320dd415cd9a47987e8118471a4
 });
 
 

@@ -41,9 +41,7 @@ import java.sql.Statement;
 
 
 public class App extends Application {
-static final String DB_URL = "jdbc:mysql://localhost/JDBC";
-   static final String USER = "root";
-   static final String PASS = "NewPassword";
+
 
 Stage window;
 Scanner input = new Scanner(System.in);
@@ -94,20 +92,6 @@ LoginBtn.setOnAction(e ->{
     System.out.println("Login button pressed");
     
 
-    try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);)
-         
-       {	
-        String user = String.valueOf(txtUser.getText());
-         String password = String.valueOf(pwBox.getText());
-
-        Statement stmt = conn.createStatement();	      
-         String sql = "INSERT INTO olduser (user,pass) VALUES ('" +user+ "','" + password  + "')";
-         stmt.executeUpdate(sql);
-         System.out.println("new record successfully inserted ... ");   	  
-      } catch (SQLException t) {
-         t.printStackTrace();
-      } 
-});
 
 
 
@@ -186,27 +170,7 @@ TfEmail.setPromptText ("enter your email");
 
 //creating buttons for the sign up scene
 Button Save =new Button("Save");
-Save.setOnAction(e ->{
 
-	try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);)
-
-	{
-		String name = String.valueOf(TfName.getText());
-		String pass = String.valueOf(TfPass.getText());
-		String lname = String.valueOf(TfLname.getText());
-		String age = String.valueOf(TfAge.getText());
-		String adress = String.valueOf(TfAddress.getText());
-		String temail = String.valueOf(TfEmail.getText());
-
-		Statement stmt = conn.createStatement();
-		String sql = "INSERT INTO newuser (NewUser,LN,email,Age,adress,pass) VALUES ('" + name + "','" +lname  + "','" + temail + "','" +age + "','" + adress + "','" + pass + "')";
-		stmt.executeUpdate(sql);
-		System.out.println("new user record successfully inserted ... ");
-	} catch (SQLException t) {
-		t.printStackTrace();
-	}
-
-});
 Button Clear1 =new Button("Clear");
 Clear1.setOnAction(e ->{
 	TfName.clear();

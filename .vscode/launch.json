@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch aaa",
+            "request": "launch",
+            "mainClass": "aaa",
+            "projectName": "Marp_Airline_FX-8_8eea6b4a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",

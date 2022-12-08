@@ -19,12 +19,49 @@
   </properties>
 
   <dependencies>
+
+
+
+  <dependency>
+      <groupId>com.stripe</groupId>
+      <artifactId>stripe-java</artifactId>
+      <version>22.2.0</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+  <!-- <dependency>
+   <groupId>com.mashape.unirest</groupId>
+   <artifactId>unirest-java</artifactId>
+   <version>1.4.7</version>
+</dependency> -->
+
+  <!-- <dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+  </dependency> -->
+
+  <!-- https://mvnrepository.com/artifact/org.renjin.cran/nycflights13 -->
+<!-- <dependency>
+    <groupId>org.renjin.cran</groupId>
+    <artifactId>nycflights13</artifactId>
+    <version>1.0.0-b1</version>
+</dependency> -->
+
+<!-- <dependency>
+     <groupId>com.sun.mail</groupId>
+     <artifactId>javax.mail</artifactId>
+     <version>1.6.2</version>
+</dependency> -->
+
+    
+
   </dependencies>
 
   <build>
@@ -73,3 +110,10 @@
     </pluginManagement>
   </build>
 </project>
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<OTA_AirDetailsRS PrimaryLangID="eng" Version="1.0" TransactionIdentifier="" xmlns="http://www.opentravel.org/OTA/2003/05">
+  <Success/>
+  <FLSWarning FLSWarningCode="-6" FLSWarningName="No flights found"/>
+   Warning: No flights found  
+</OTA_AirDetailsRS> -->

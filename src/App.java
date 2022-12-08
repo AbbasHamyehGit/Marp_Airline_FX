@@ -63,17 +63,16 @@ pwBox.setPromptText("password") ;
 grid.add(pwBox, 1, 2);
 
 GridPane Gpane3=new GridPane();
-Scene scene3=new Scene(Gpane3);
+Scene scene3=new Scene(Gpane3,600,600);
 
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
-    if(txtUser.getText()==txtUser.getText() || pwBox.getText()==pwBox.getText()) {
+    
     	window.setScene(scene3);
     	window.setResizable(true);
-    }
-    else
-    	txtUser.setText("userName or password are incorrect!");
+    
+   
         
 });
 Button Clear=new Button("Clear") ;

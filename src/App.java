@@ -1,3 +1,5 @@
+
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -82,13 +84,19 @@ pwBox.setPromptText("password") ;
 // String password = pwBox.getText();
 //  String password = String.valueOf(pwBox.getText());
 grid.add(pwBox, 1, 2);
- 
-GridPane Gpane3 =new GridPane();
-Scene scene3=new Scene(Gpane3);
+
+GridPane Gpane3=new GridPane();
+Scene scene3=new Scene(Gpane3,600,600);
 
 Button LoginBtn=new Button("Login") ;
 grid.add(LoginBtn, 1, 3);
 LoginBtn.setOnAction(e ->{
+    
+    	window.setScene(scene3);
+    	window.setResizable(true);
+    
+   
+        
     System.out.println("Login button pressed");
     
 

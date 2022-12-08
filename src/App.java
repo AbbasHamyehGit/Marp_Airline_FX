@@ -186,6 +186,27 @@ TfEmail.setPromptText ("enter your email");
 
 //creating buttons for the sign up scene
 Button Save =new Button("Save");
+Save.setOnAction(e ->{
+
+	try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);)
+
+	{
+		String name = String.valueOf(TfName.getText());
+		String pass = String.valueOf(TfPass.getText());
+		String lname = String.valueOf(TfLname.getText());
+		String age = String.valueOf(TfAge.getText());
+		String adress = String.valueOf(TfAddress.getText());
+		String temail = String.valueOf(TfEmail.getText());
+
+		Statement stmt = conn.createStatement();
+		String sql = "INSERT INTO newuser (NewUser,LN,email,Age,adress,pass) VALUES ('" + name + "','" +lname  + "','" + temail + "','" +age + "','" + adress + "','" + pass + "')";
+		stmt.executeUpdate(sql);
+		System.out.println("new user record successfully inserted ... ");
+	} catch (SQLException t) {
+		t.printStackTrace();
+	}
+
+});
 Button Clear1 =new Button("Clear");
 Clear1.setOnAction(e ->{
 	TfName.clear();

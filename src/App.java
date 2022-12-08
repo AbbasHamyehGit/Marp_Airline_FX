@@ -115,7 +115,7 @@ LoginBtn.setOnAction(e ->{
 //});
 Button Clear=new Button("Clear") ;
 grid.add(Clear, 2, 3);
-Clear.setOnAction(e ->{
+Clear.setOnAction(es ->{
     txtUser.clear();
     pwBox.clear();
     
@@ -157,14 +157,14 @@ Label LshowPass=new Label("your Pass");
 LshowPass.setTextFill(Color.BLACK);
 
 Button ShowPass=new Button("(6)");
-ShowPass.setOnMousePressed(e->{
+ShowPass.setOnMousePressed(et->{
 	if(TfPass.getLength()!=0) {
 		LshowPass.setText(TfPass.getText());
 		LshowPass.setTextFill(Color.RED);
 	}
 
 });
-ShowPass.setOnMouseReleased(e->{
+ShowPass.setOnMouseReleased(ef->{
 	LshowPass.setText("your Pass");
 	LshowPass.setTextFill(Color.BLACK);
 });
@@ -180,7 +180,7 @@ TfEmail.setPromptText ("enter your email");
 Button Save =new Button("Save");
 
 Button Clear1 =new Button("Clear");
-Clear1.setOnAction(e ->{
+Clear1.setOnAction(ep ->{
 	TfName.clear();
 	TfLname.clear();
 	TfAge.clear();
@@ -244,7 +244,7 @@ pane.setTop(vTrip);
 
 Scene scene=new Scene(pane,600,600);
 
-hSign.setOnMouseClicked(e ->{
+hSign.setOnMouseClicked(el ->{
 window.setScene(scene);
 window.setResizable(true);
 });
@@ -266,7 +266,7 @@ bo.setBottom(VSignUp);
 
 
 Scene scenee=new Scene( bo, 350,520) ;
-Cancel.setOnAction(e ->{
+Cancel.setOnAction(ed ->{
 	  RadioButton Sure = new RadioButton("Sure");
 	    RadioButton No = new RadioButton("No");
 	    Gpane.add(Sure,4 , 5);
@@ -280,13 +280,14 @@ Cancel.setOnAction(e ->{
 	
 	
 });
-window.setTitle("MARP Airlines");
-window.setScene(scenee) ;
-window.show() ;
-}
+// window.setTitle("MARP Airlines");
+// window.setScene(scenee) ;
+// window.show();
+
+
+
 public static void main(String [] args) {
 launch(args) ;
 
 }
-
 }

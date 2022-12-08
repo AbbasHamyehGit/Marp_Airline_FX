@@ -1,7 +1,6 @@
 {
-    
-    "java.dependency.packagePresentation": "hierarchical",
     "java.project.sourcePaths": [
+        ".vscode/src",
         "src"
     ],
     "java.project.outputPath": "",
@@ -14,7 +13,11 @@
         "c:\\javafx-sdk-19\\lib\\javafx.media.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.swing.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.web.jar",
-        "c:\\javafx-sdk-19\\lib\\javafx-swt.jar",
-        "c:\\Program Files (x86)\\MySQL\\Connector J 8.0\\mysql-connector-j-8.0.31.jar"
-    ]
+        "c:\\javafx-sdk-19\\lib\\javafx-swt.jar"
+    ],
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.dependency.syncWithFolderExplorer": false,
+    "maven.view": "flat",
+    "java.dependency.packagePresentation": "hierarchical",
 }

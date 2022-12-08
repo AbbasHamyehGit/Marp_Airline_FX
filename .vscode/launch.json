@@ -6,12 +6,35 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Marp_Airline_FX-8_8eea6b4a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "src.App",
+            "projectName": "Marp_Airline_FX-8_8eea6b4a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "JavaFx",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch LoginForm",
             "request": "launch",
             "mainClass": "LoginForm",
             "projectName": "JavaFx-11_dc072478",
-            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-module javafx.controls,javafx.fxml"
-        },
-        {}
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        }
     ]
 }

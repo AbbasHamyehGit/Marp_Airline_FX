@@ -4,7 +4,7 @@
     "java.project.sourcePaths": [
         "src"
     ],
-    "java.project.outputPath": "",
+    "java.project.outputPath": "target",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-19\\lib\\javafx.base.jar",

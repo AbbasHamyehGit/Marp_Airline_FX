@@ -106,7 +106,7 @@ public class email {
 
 
     
-    // public static void main(String[] args) {
-    //     SendEmail send = new SendEmail("@gmail.com", "subject", "body"); // change receiver email
-    // }
+    public static void main(String[] args) {
+        SendEmail send = new SendEmail("@gmail.com", "subject", "body"); // change receiver email
+    }
 

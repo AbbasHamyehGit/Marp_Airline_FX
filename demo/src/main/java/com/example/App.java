@@ -1,5 +1,7 @@
+package application;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 import javafx.application.Application;
@@ -11,6 +13,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -41,6 +45,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
 import javafx.stage.Stage ;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -345,15 +350,60 @@ public class App extends Application {
 
 				  TextArea txt = new TextArea("dfe");
 				    ListView<String> lv = new ListView<>(FXCollections.observableArrayList(CraftTitle));
-				    lv.setPrefSize(140, 400);
+				    lv.setPrefSize(140, 200);
 				    lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 				   
 				   
 				    // Create a pane to hold image views
 				    FlowPane imagePane = new FlowPane(30, 30);
-				    BorderPane Apane = new BorderPane();				    
+				    BorderPane Apane = new BorderPane();
+				    BorderPane BAir = new BorderPane();
+				    Button Cbutton = new Button("choose");
+             	
+				    Cbutton.setOnAction(act ->
+			    {
+			    	 VBox paneForRadioButtons = new VBox(20);
+			    	    paneForRadioButtons.setPadding(new Insets(5, 5, 5, 5)); 
+			    	    paneForRadioButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: green");
+			    	    
+			    	    RadioButton RdFirst = new RadioButton("First_Aircraft");
+			    	    RadioButton RdSecond = new RadioButton("Second_Aircraft");
+			    	    RadioButton RdThird = new RadioButton("Third_Aircraft");
+			    	    Alert alert = new Alert(AlertType. CONFIRMATION);
+			    	    RdFirst.setOnAction(e ->{
+			    	    	RdSecond.setSelected(false);
+			    		   RdThird.setSelected(false);
+			    		   
+			    		   alert.setContentText("you choosed thi first aicraft 100$ will be taken from your account");
+			    		   alert.show();
+			    });
+			    		  
+			    	 
+			    	    RdSecond.setOnAction(e ->{
+				    		   RdFirst.setSelected(false);
+				    		   RdThird.setSelected(false);
+				    		   alert.setContentText("you choosed thi second aicraft 200$ will be taken from your account");
+				    		   alert.show();
+			    	    });
+			    	    RdThird.setOnAction(e ->{
+					    		   RdSecond.setSelected(false);
+					    		   RdFirst.setSelected(false);
+					    		   alert.setContentText("you choosed thi third aicraft 500$ will be taken from your account");
+					    		   alert.show();
+			    	    });
+			    	   
+			    	 
+			    		
+			    	    paneForRadioButtons.getChildren().addAll(RdFirst, RdSecond, RdThird);
+			    	   
+			    	   BAir.setCenter(paneForRadioButtons);
+			    	    
+			    });
+				  
+				    BAir.setCenter(Cbutton);
 				    Apane.setLeft(new ScrollPane(lv));   
 				    Apane.setCenter(imagePane);
+				    Apane.setBottom(BAir);
 				    Apane.setRight(txt);
 
 				    lv.getSelectionModel().selectedItemProperty().addListener(

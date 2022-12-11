@@ -47,6 +47,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage ;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -58,7 +62,6 @@ import java.sql.Statement;
 public class App extends Application {
 	Stage window;
 	Scanner input = new Scanner(System.in);
-	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public void start(Stage primaryStage) {
 		Stage window=primaryStage;
@@ -193,6 +196,36 @@ public class App extends Application {
 		
 		//creating buttons for the sign up scene
 		Button Save =new Button("Save");
+		Save.setOnAction(e ->{ 
+			File file1 = new File("SignUp1.txt");
+	   
+	    if (file1.exists()) {
+	      System.out.println("Files already exist");
+	      System.exit(0);
+	    }
+
+	    // Create a file
+	    PrintWriter output1;
+		try { 
+			// Write formatted output to the file
+			output1 = new PrintWriter(file1);
+			output1.println("Name: "+TfName.getText()+"\tlast name: "+TfLname.getText());
+			output1.println("Email: "+TfEmail.getText());
+			output1.println("Age: "+TfAge.getText()+"\tAddress: "+TfAddress.getText());
+			output1.println("Credit number: "+TfCredit.getText());
+			System.out.println("file created successfully!!");
+
+	    
+	    // Close the file
+	    output1.close();
+		} catch (FileNotFoundException e1) {
+			
+			e1.printStackTrace();
+		}
+	  
+	   
+	   
+	   });
 
 		Button Clear1 =new Button("Clear");
 		Clear1.setOnAction(ep ->{

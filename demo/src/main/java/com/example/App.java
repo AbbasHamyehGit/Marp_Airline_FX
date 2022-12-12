@@ -392,6 +392,7 @@ public class App extends Application {
 				    BorderPane Apane = new BorderPane();
 				    BorderPane BAir = new BorderPane();
 				    Button Cbutton = new Button("choose");
+				   
              	
 				    Cbutton.setOnAction(act ->
 			    {
@@ -432,8 +433,12 @@ public class App extends Application {
 			    	   BAir.setCenter(paneForRadioButtons);
 			    	    
 			    });
-				  
+				    Button ReturnB = new Button ("Return");
 				    BAir.setCenter(Cbutton);
+				    BAir.setLeft(ReturnB);
+				    ReturnB.setOnAction(action ->{
+				    window.setScene(scene3);
+				    });
 				    Apane.setLeft(new ScrollPane(lv));   
 				    Apane.setCenter(imagePane);
 				    Apane.setBottom(BAir);

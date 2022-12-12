@@ -1,9 +1,8 @@
-package application;
+package com.example;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -482,17 +481,20 @@ public class App extends Application {
 		
 
 		//cancel button on the sign up scene
-		Cancel.setOnAction(ed ->{
-			  RadioButton Sure = new RadioButton("Sure");
-			    RadioButton No = new RadioButton("No");
-			    Gpane.add(Sure,3 , 7);
-			Gpane.add(No, 3, 8);
-			Sure.setOnAction(ev ->{
-				window.setScene(scenee);
-			});
-			No.setOnAction(eve->{
-				window.setScene(scene);
-			});
+		Cancel.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent ed) {
+				RadioButton Sure = new RadioButton("Sure");
+				RadioButton No = new RadioButton("No");
+				Gpane.add(Sure, 3, 7);
+				Gpane.add(No, 3, 8);
+				Sure.setOnAction(ev -> {
+					window.setScene(scenee);
+				});
+				No.setOnAction(eve -> {
+					window.setScene(scene);
+				});
+			}
 		});
 
 		

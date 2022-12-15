@@ -13,8 +13,8 @@ CREATE TABLE newuser(
     email VARCHAR(255),
     Age INTEGER,
     adress VARCHAR(255),
-    pass VARCHAR(255)
+    credit INTEGER,
+    passCredit INTEGER);
 
 
 
-);

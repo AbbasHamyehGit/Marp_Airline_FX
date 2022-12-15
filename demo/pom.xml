@@ -60,6 +60,15 @@
      <version>1.6.2</version>
 </dependency> -->
 
+<dependencies>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>11</version>
+      </dependency>
+    </dependencies>
+
+
     
 
   </dependencies>
@@ -106,6 +115,16 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+
+        <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.1</version>
+        <configuration>
+            <mainClass>App</mainClass>
+        </configuration>
+    </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

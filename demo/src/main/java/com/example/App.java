@@ -1,9 +1,10 @@
-package application;
+package com.example;
 
 import java.util.List;
+import static javafx.application.Application.launch;
 import java.util.Optional;
+import javafx.fxml.FXMLLoader;
 import java.util.Scanner;
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -113,7 +114,7 @@ public class App extends Application {
 		VSignUp.setAlignment(Pos.CENTER);
 		VSignUp.getChildren().addAll(lAcc,hSign);
 
-		ImageView v1=new ImageView("MARP Airlines.png");
+		ImageView v1=new ImageView("MARP.png");
 		v1.setFitHeight(300);
 		v1.setFitWidth(350);
 
@@ -168,17 +169,17 @@ public class App extends Application {
 		LshowPass.setTextFill(Color.BLACK);
 
 		Button ShowPass=new Button("(6)");
-		ShowPass.setOnMousePressed(et->{
-			if(TfPass.getLength()!=0) {
-				LshowPass.setText(TfPass.getText());
-				LshowPass.setTextFill(Color.RED);
-			}
+		// ShowPass.setOnMousePressed(et->{
+		// 	if(TfPass.getLength()!=0) {
+		// 		LshowPass.setText(TfPass.getText());
+		// 		LshowPass.setTextFill(Color.RED);
+		// 	}
 
-		});
-		ShowPass.setOnMouseReleased(ef->{
-			LshowPass.setText("your Pass");
-			LshowPass.setTextFill(Color.BLACK);
-		});
+		// });
+		// ShowPass.setOnMouseReleased(ef->{
+		// 	LshowPass.setText("your Pass");
+		// 	LshowPass.setTextFill(Color.BLACK);
+		// });
 		Label address=new Label("address");
 		TextField TfAddress=new TextField();
 		TfAddress.setPromptText ("enter your address");
@@ -196,7 +197,35 @@ public class App extends Application {
 		
 		//creating buttons for the sign up scene
 		Button Save =new Button("Save");
-		Save.setOnAction(e ->{ 
+		// Save.setOnAction(e ->{ 
+
+			// // connection of the newuser
+
+			// static final String DB_URL = "jdbc:mysql://localhost/JDBC";
+			// static final String USER = "root";
+			// static final String PASS = "NewPassword";
+
+			// try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);)
+
+			// {
+			// 	String name = String.valueOf(TfName.getText());
+			// 	String pass = String.valueOf(TfPass.getText());
+			// 	String lname = String.valueOf(TfLname.getText());
+			// 	String age = String.valueOf(TfAge.getText());
+			// 	String adress = String.valueOf(TfAddress.getText());
+			// 	String temail = String.valueOf(TfEmail.getText());
+			// 	String credit = String.valueOf( TfCredit.getText());
+			// 	String passCredit = String.valueOf( TfCPass.getText());
+
+
+			// 	Statement stmt = conn.createStatement();
+			// 	String sql = "INSERT INTO newuser (NewUser,LN,email,Age,adress,pass,credit,passCredit) VALUES ('" + name + "','" + lname
+			// 			+ "','" + temail + "','" + age + "','" + adress + "','" + pass + "','" + credit + "','" + passCredit +"')";
+			// 	stmt.executeUpdate(sql);
+			// 	System.out.println("new user record successfully inserted ... ");
+			// } catch (SQLException t) {
+			// 	t.printStackTrace();
+			// }
 			File file1 = new File("SignUp1.txt");
 	   
 	    if (file1.exists()) {
@@ -204,40 +233,40 @@ public class App extends Application {
 	      System.exit(0);
 	    }
 
-	    // Create a file
-	    PrintWriter output1;
-		try { 
-			// Write formatted output to the file
-			output1 = new PrintWriter(file1);
-			output1.println("Name: "+TfName.getText()+"\tlast name: "+TfLname.getText());
-			output1.println("Email: "+TfEmail.getText());
-			output1.println("Age: "+TfAge.getText()+"\tAddress: "+TfAddress.getText());
-			output1.println("Credit number: "+TfCredit.getText());
-			System.out.println("file created successfully!!");
+	    // // Create a file
+	    // PrintWriter output1;
+		// try { 
+		// 	// Write formatted output to the file
+		// 	output1 = new PrintWriter(file1);
+		// 	output1.println("Name: "+TfName.getText()+"\tlast name: "+TfLname.getText());
+		// 	output1.println("Email: "+TfEmail.getText());
+		// 	output1.println("Age: "+TfAge.getText()+"\tAddress: "+TfAddress.getText());
+		// 	output1.println("Credit number: "+TfCredit.getText());
+		// 	System.out.println("file created successfully!!");
 
 	    
-	    // Close the file
-	    output1.close();
-		} catch (FileNotFoundException e1) {
+	    // // Close the file
+	    // output1.close();
+		// } catch (FileNotFoundException e1) {
 			
-			e1.printStackTrace();
-		}
+		// 	e1.printStackTrace();
+		// }
 	  
 	   
 	   
-	   });
+	//    });
 
-		Button Clear1 =new Button("Clear");
-		Clear1.setOnAction(ep ->{
-			TfName.clear();
-			TfLname.clear();
-			TfAge.clear();
-			TfPass.clear();
-			TfAddress.clear();
-			TfEmail.clear();
-			TfCredit.clear();
-			TfCPass.clear();
-			});
+		// Button Clear1 =new Button("Clear");
+		// Clear1.setOnAction(ep ->{
+		// 	TfName.clear();
+		// 	TfLname.clear();
+		// 	TfAge.clear();
+		// 	TfPass.clear();
+		// 	TfAddress.clear();
+		// 	TfEmail.clear();
+		// 	TfCredit.clear();
+		// 	TfCPass.clear();
+		// 	});
 		
 		Button Cancel = new Button ("Cancel");
 
@@ -273,7 +302,7 @@ public class App extends Application {
 		Gpane.add(ShowPass, 5, 3);
 		Gpane.add(Save, 1,6);
 		Gpane.add(Cancel, 3,6);
-		Gpane.add(Clear1, 4, 6);
+		// Gpane.add(Clear1, 4, 6);
 		Gpane.add(LshowPass,6,3);
 		
 		Gpane.add(credit,0 ,4 );
@@ -289,10 +318,10 @@ public class App extends Application {
 
 		Scene scene=new Scene(pane,600,600);
 
-		hSign.setOnMouseClicked(el ->{
-		window.setScene(scene);
-		window.setResizable(true);
-		});
+		// hSign.setOnMouseClicked(el ->{
+		// window.setScene(scene);
+		// window.setResizable(true);
+		// });
 	
 		
 		
@@ -315,10 +344,10 @@ public class App extends Application {
 		
 		Button BtReturnToLogin=new Button("Return");//teb3a la scene 3 taba3 l menu
 		
-		BtReturnToLogin.setOnAction(ex->{
-			window.setScene(scenee);
-			window.setResizable(false);
-		});
+		// BtReturnToLogin.setOnAction(ex->{
+		// 	window.setScene(scenee);
+		// 	window.setResizable(false);
+		// });
 		
 		
 		
@@ -375,7 +404,7 @@ public class App extends Application {
 		 String[] CraftTitle = {"FirstAircraft", "SecondAircraft", "ThirdAircraft"};
 	
 				  // Declare an ImageView array for the national flags of 9 countries
-				  ImageView[] ImageViews = {
+				  ImageView[] imageViews = {
 				    new ImageView ("A350_XWB.jpeg"),
 				    new ImageView("Boeing_747.jpeg"),
 				    new ImageView("N188TW.jpeg"),
@@ -387,113 +416,116 @@ public class App extends Application {
 				    lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 				   
 				   
-				    // Create a pane to hold image views
-				    FlowPane imagePane = new FlowPane(30, 30);
-				    BorderPane Apane = new BorderPane();
-				    BorderPane BAir = new BorderPane();
-				    Button Cbutton = new Button("choose");
+		// 		    // Create a pane to hold image views
+		// 		    FlowPane imagePane = new FlowPane(30, 30);
+		// 		    BorderPane Apane = new BorderPane();
+		// 		    BorderPane BAir = new BorderPane();
+		// 		    Button Cbutton = new Button("choose");
 				   
              	
-				    Cbutton.setOnAction(act ->
-			    {
-			    	 VBox paneForRadioButtons = new VBox(20);
-			    	    paneForRadioButtons.setPadding(new Insets(5, 5, 5, 5)); 
-			    	    paneForRadioButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: green");
+		// 		    Cbutton.setOnAction(act ->
+		// 	    {
+		// 	    	 VBox paneForRadioButtons = new VBox(20);
+		// 	    	    paneForRadioButtons.setPadding(new Insets(5, 5, 5, 5)); 
+		// 	    	    paneForRadioButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: green");
 			    	    
-			    	    RadioButton RdFirst = new RadioButton("First_Aircraft");
-			    	    RadioButton RdSecond = new RadioButton("Second_Aircraft");
-			    	    RadioButton RdThird = new RadioButton("Third_Aircraft");
-			    	    Alert alert = new Alert(AlertType. CONFIRMATION);
-			    	    RdFirst.setOnAction(e ->{
-			    	    	RdSecond.setSelected(false);
-			    		   RdThird.setSelected(false);
+		// 	    	    RadioButton RdFirst = new RadioButton("First_Aircraft");
+		// 	    	    RadioButton RdSecond = new RadioButton("Second_Aircraft");
+		// 	    	    RadioButton RdThird = new RadioButton("Third_Aircraft");
+		// 	    	    Alert alert = new Alert(AlertType. CONFIRMATION);
+		// 	    	    RdFirst.setOnAction(e ->{
+		// 	    	    	RdSecond.setSelected(false);
+		// 	    		   RdThird.setSelected(false);
 			    		   
-			    		   alert.setContentText("you choosed thi first aicraft 100$ will be taken from your account");
-			    		   alert.show();
-			    });
+		// 	    		   alert.setContentText("you choosed thi first aicraft 100$ will be taken from your account");
+		// 	    		   alert.show();
+		// 	    });
 			    		  
 			    	 
-			    	    RdSecond.setOnAction(e ->{
-				    		   RdFirst.setSelected(false);
-				    		   RdThird.setSelected(false);
-				    		   alert.setContentText("you choosed thi second aicraft 200$ will be taken from your account");
-				    		   alert.show();
-			    	    });
-			    	    RdThird.setOnAction(e ->{
-					    		   RdSecond.setSelected(false);
-					    		   RdFirst.setSelected(false);
-					    		   alert.setContentText("you choosed thi third aicraft 500$ will be taken from your account");
-					    		   alert.show();
-			    	    });
+		// 	    	    RdSecond.setOnAction(e ->{
+		// 		    		   RdFirst.setSelected(false);
+		// 		    		   RdThird.setSelected(false);
+		// 		    		   alert.setContentText("you choosed thi second aicraft 200$ will be taken from your account");
+		// 		    		   alert.show();
+		// 	    	    });
+		// 	    	    RdThird.setOnAction(e ->{
+		// 			    		   RdSecond.setSelected(false);
+		// 			    		   RdFirst.setSelected(false);
+		// 			    		   alert.setContentText("you choosed thi third aicraft 500$ will be taken from your account");
+		// 			    		   alert.show();
+		// 	    	    });
 			    	   
 			    	 
 			    		
-			    	    paneForRadioButtons.getChildren().addAll(RdFirst, RdSecond, RdThird);
+		// 	    	    paneForRadioButtons.getChildren().addAll(RdFirst, RdSecond, RdThird);
 			    	   
-			    	   BAir.setCenter(paneForRadioButtons);
+		// 	    	   BAir.setCenter(paneForRadioButtons);
 			    	    
-			    });
-				    Button ReturnB = new Button ("Return");
-				    BAir.setCenter(Cbutton);
-				    BAir.setLeft(ReturnB);
-				    ReturnB.setOnAction(action ->{
-				    window.setScene(scene3);
-				    });
-				    Apane.setLeft(new ScrollPane(lv));   
-				    Apane.setCenter(imagePane);
-				    Apane.setBottom(BAir);
-				    Apane.setRight(txt);
+		// 	    });
+		// 		    Button ReturnB = new Button ("Return");
+		// 		    BAir.setCenter(Cbutton);
+		// 		    BAir.setLeft(ReturnB);
+		// 		    ReturnB.setOnAction(action ->{
+		// 		    window.setScene(scene3);
+		// 		    });
+		// 		    Apane.setLeft(new ScrollPane(lv));   
+		// 		    Apane.setCenter(imagePane);
+		// 		    Apane.setBottom(BAir);
+		// 		    Apane.setRight(txt);
 
-				    lv.getSelectionModel().selectedItemProperty().addListener(
-				      ov -> { 
-				    	  imagePane.getChildren().clear();
-				        for (Integer i: lv.getSelectionModel().getSelectedIndices()) {
-				          imagePane.getChildren().add(ImageViews[i]);
-				        }
-				    });
-				    Scene Ascene = new Scene(Apane,700,500);
+		// 		    lv.getSelectionModel().selectedItemProperty().addListener(
+		// 		      ov -> { 
+		// 		    	  imagePane.getChildren().clear();
+		// 		        for (Integer i: lv.getSelectionModel().getSelectedIndices()) {
+		// 		          imagePane.getChildren().add(ImageViews[i]);
+		// 		        }
+		// 		    });
+		// 		    Scene Ascene = new Scene(Apane,700,500);
 				  
-				    BtAircraft.setOnAction(en -> {
-				    	window.setScene(Ascene); 
-				    });
+		// 		    BtAircraft.setOnAction(en -> {
+		// 		    	window.setScene(Ascene); 
+		// 		    });
 				    
 	
-		Button LoginBtn=new Button("Login") ;
-		grid.add(LoginBtn, 1, 3);
+		// Button LoginBtn=new Button("Login") ;
+		// grid.add(LoginBtn, 1, 3);
 		
-		LoginBtn.setOnAction(e ->{
+		// LoginBtn.setOnAction(e ->{
 		    
-	    	window.setScene(scene3);
-	    	window.setResizable(false);
-		});
+	    // 	window.setScene(scene3);
+	    // 	window.setResizable(false);
+		// });
 
 		
 		
 		
-		Button Clear=new Button("Clear") ;
-		grid.add(Clear, 2, 3);
-		Clear.setOnAction(es ->{
-		    txtUser.clear();
-		    pwBox.clear();
+		// Button Clear=new Button("Clear") ;
+		// grid.add(Clear, 2, 3);
+		// Clear.setOnAction(es ->{
+		//     txtUser.clear();
+		//     pwBox.clear();
 		    
-		});
+		// });
 
 		
 		
 
 		//cancel button on the sign up scene
-		Cancel.setOnAction(ed ->{
-			  RadioButton Sure = new RadioButton("Sure");
-			    RadioButton No = new RadioButton("No");
-			    Gpane.add(Sure,3 , 7);
-			Gpane.add(No, 3, 8);
-			Sure.setOnAction(ev ->{
-				window.setScene(scenee);
-			});
-			No.setOnAction(eve->{
-				window.setScene(scene);
-			});
-		});
+		// Cancel.setOnAction(new EventHandler<ActionEvent>() {
+		// 	@Override
+		// 	public void handle(ActionEvent ed) {
+		// 		RadioButton Sure = new RadioButton("Sure");
+		// 		RadioButton No = new RadioButton("No");
+		// 		Gpane.add(Sure, 3, 7);
+		// 		Gpane.add(No, 3, 8);
+		// 		Sure.setOnAction(ev -> {
+		// 			window.setScene(scenee);
+		// 		});
+		// 		No.setOnAction(eve -> {
+		// 			window.setScene(scene);
+		// 		});
+		// 	}
+		// });
 
 		
 

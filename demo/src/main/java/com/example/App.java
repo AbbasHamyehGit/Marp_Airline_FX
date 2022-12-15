@@ -1,8 +1,9 @@
-package com.example;
+package application;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,6 +48,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage ;
 
+import java.awt.Checkbox;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -56,8 +58,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
   
-
-
 public class App extends Application {
 	Stage window;
 	Scanner input = new Scanner(System.in);
@@ -72,7 +72,7 @@ public class App extends Application {
 		grid.setAlignment(Pos.CENTER);
 		grid.setVgap (5);
 		grid.setHgap(-35);
-		grid.setPadding(new Insets(5)) ;
+		grid.setPadding(new Insets(5));
 
 		Text welcomeTxt = new Text ("Welcome") ;
 		welcomeTxt.setFont(Font.font( "Tehoma",FontWeight.LIGHT,25));
@@ -380,7 +380,8 @@ public class App extends Application {
 				    new ImageView("N188TW.jpeg"),
 				  };
 
-				  TextArea txt = new TextArea("dfe");
+				  TextArea txt = new TextArea("");
+				  txt.setText("hello");
 				    ListView<String> lv = new ListView<>(FXCollections.observableArrayList(CraftTitle));
 				    lv.setPrefSize(140, 200);
 				    lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -400,8 +401,11 @@ public class App extends Application {
 			    	    paneForRadioButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: green");
 			    	    
 			    	    RadioButton RdFirst = new RadioButton("First_Aircraft");
+			    	   
 			    	    RadioButton RdSecond = new RadioButton("Second_Aircraft");
+			    	  
 			    	    RadioButton RdThird = new RadioButton("Third_Aircraft");
+			    	 //alert message for
 			    	    Alert alert = new Alert(AlertType. CONFIRMATION);
 			    	    RdFirst.setOnAction(e ->{
 			    	    	RdSecond.setSelected(false);
@@ -478,26 +482,19 @@ public class App extends Application {
 		});
 
 		
-		
-
 		//cancel button on the sign up scene
-		Cancel.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent ed) {
-				RadioButton Sure = new RadioButton("Sure");
-				RadioButton No = new RadioButton("No");
-				Gpane.add(Sure, 3, 7);
-				Gpane.add(No, 3, 8);
-				Sure.setOnAction(ev -> {
-					window.setScene(scenee);
-				});
-				No.setOnAction(eve -> {
-					window.setScene(scene);
-				});
-			}
+		Cancel.setOnAction(ed ->{
+			  RadioButton Sure = new RadioButton("Sure");
+			    RadioButton No = new RadioButton("No");
+			    Gpane.add(Sure,3 , 7);
+			Gpane.add(No, 3, 8);
+			Sure.setOnAction(ev ->{
+				window.setScene(scenee);
+			});
+			No.setOnAction(eve->{
+				window.setScene(scene);
+			});
 		});
-
-		
 
 		
 		 window.setTitle("MARP Airlines");
@@ -505,9 +502,51 @@ public class App extends Application {
 		 window.show();
 		 window.setResizable(false);
 
+	//reservation scene(scene 4)
+		 VBox VRadio = new VBox(5);
+		 RadioButton RdVip =new RadioButton("VIP");
+	 RadioButton RdFistClass =new RadioButton("FirtClass");
+		 RadioButton RdRegular =new RadioButton("Regular");
+		 
+	 VRadio.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
+	 VRadio.setStyle("-fx-background-color:SteelBlue");
+		 VRadio.setAlignment(Pos.CENTER);
+		 VRadio.getChildren().addAll( RdVip,RdFistClass,RdRegular); 
+		 
+        
+        
+		 VBox VCheck = new VBox (20);
+        CheckBox OneWay = new CheckBox ("One way");
+        CheckBox TwoWays = new CheckBox ("Two Ways");
+        VCheck.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
+        VCheck.setStyle("-fx-background-color:SteelBlue");
+        VCheck.setAlignment(Pos.CENTER);
+        VCheck.getChildren().addAll(OneWay,TwoWays);
+        
+        HBox HbButtons=new HBox();
+        Button BtSave=new Button("Save");
+        Button BtCancel=new Button("Cancel");
+        BtCancel.setOnAction(e ->{
+        	window.setScene(scene3);
+        });
+        HbButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
+        HbButtons.setStyle("-fx-background-color:SteelBlue");
+        HbButtons.setAlignment(Pos.CENTER);
+        HbButtons.getChildren().addAll(BtSave,BtCancel);
+        
+        BorderPane BpReserv=new BorderPane();
+        BpReserv.setLeft(VRadio);
+        BpReserv.setRight(VCheck);
+        
+        BpReserv.setBottom(HbButtons);
+    
+	Scene ResScene = new Scene(BpReserv,300,400);
+		BtReservation.setOnAction( acte ->{
+		window.setScene(ResScene);
+		});
+ }
 	
-	}
-	
+
 public static void main(String [] args) {
 	launch(args);
 

@@ -20,10 +20,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Hyperlink;
-import javafx.application.Application ;
-import javafx.scene.Scene ;
-import javafx.scene .control.Button ;
-import javafx.scene.control.Label ;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -40,14 +40,14 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout . StackPane;
-import javafx.scene.layout.VBox ;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
-import javafx.stage.Stage ;
+import javafx.stage.Stage;
 
 import java.awt.Checkbox;
 import java.io.File;
@@ -58,25 +58,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-  
 public class App extends Application {
 	Stage window;
 	Scanner input = new Scanner(System.in);
+
 	@Override
 	public void start(Stage primaryStage) {
-		Stage window=primaryStage;
-		
-		
+		Stage window = primaryStage;
 
-		GridPane grid=new GridPane();
+		GridPane grid = new GridPane();
 
 		grid.setAlignment(Pos.CENTER);
-		grid.setVgap (5);
+		grid.setVgap(5);
 		grid.setHgap(-35);
 		grid.setPadding(new Insets(5));
 
-		Text welcomeTxt = new Text ("Welcome") ;
-		welcomeTxt.setFont(Font.font( "Tehoma",FontWeight.LIGHT,25));
+		Text welcomeTxt = new Text("Welcome");
+		welcomeTxt.setFont(Font.font("Tehoma", FontWeight.LIGHT, 25));
 		welcomeTxt.setFill(Color.ALICEBLUE);
 		grid.add(welcomeTxt, 0, 0);
 
@@ -84,151 +82,145 @@ public class App extends Application {
 		lblUser.setTextFill(Color.ALICEBLUE);
 		grid.add(lblUser, 0, 1);
 
-		TextField txtUser=new TextField();
-		txtUser.setPromptText ("username");
+		TextField txtUser = new TextField();
+		txtUser.setPromptText("username");
 		// String user = String.valueOf(txtUser.getText());
 		grid.add(txtUser, 1, 1);
 
-		Label lblPassword=new Label ("Password:") ;
+		Label lblPassword = new Label("Password:");
 		lblPassword.setTextFill(Color.ALICEBLUE);
 
 		grid.add(lblPassword, 0, 2);
 
-		PasswordField pwBox=new PasswordField();
-		pwBox.setPromptText("password") ;
-		
-		grid.add(pwBox, 1, 2);
-		
-//sign up hyper link
-		Hyperlink hSign=new Hyperlink("sign up");
-		hSign.setTextFill(Color.BLUE);
-		hSign.setFont(Font.font( "Tehoma",FontWeight.LIGHT,15));
-		
-		Label lAcc=new Label();
-		lAcc.setText("Don't have an account?");
-		lAcc.setFont(Font.font("Tehoma",FontWeight.LIGHT,17));
+		PasswordField pwBox = new PasswordField();
+		pwBox.setPromptText("password");
 
-		VBox VSignUp=new VBox();
+		grid.add(pwBox, 1, 2);
+
+//sign up hyper link
+		Hyperlink hSign = new Hyperlink("sign up");
+		hSign.setTextFill(Color.BLUE);
+		hSign.setFont(Font.font("Tehoma", FontWeight.LIGHT, 15));
+
+		Label lAcc = new Label();
+		lAcc.setText("Don't have an account?");
+		lAcc.setFont(Font.font("Tehoma", FontWeight.LIGHT, 17));
+
+		VBox VSignUp = new VBox();
 		VSignUp.setStyle("-fx-background-color: SteelBlue");
 		VSignUp.setAlignment(Pos.CENTER);
-		VSignUp.getChildren().addAll(lAcc,hSign);
+		VSignUp.getChildren().addAll(lAcc, hSign);
 
-		ImageView v1=new ImageView("MARP Airlines.png");
+		ImageView v1 = new ImageView("MARP Airlines.png");
 		v1.setFitHeight(300);
 		v1.setFitWidth(350);
 
-		GridPane p1=new GridPane();
-
+		GridPane p1 = new GridPane();
 
 		p1.setAlignment(Pos.CENTER);
 		p1.add(v1, 0, 0);
 
-		VBox b1=new VBox();
+		VBox b1 = new VBox();
 		b1.setPadding(new Insets(15, 15, 15, 15));
 		b1.setStyle("-fx-background-color: SteelBlue");
 		b1.getChildren().add(grid);
-		
-		BorderPane bo=new BorderPane();
+
+		BorderPane bo = new BorderPane();
 		bo.setCenter(b1);
 		bo.setTop(p1);
 		bo.setBottom(VSignUp);
-		
 
-		Scene scenee=new Scene( bo, 350,520) ;
-		
-		
-		//this is for the sign up
-		
-		ImageView imageTrip=new ImageView("trip.gif");
+		Scene scenee = new Scene(bo, 350, 520);
+
+		// this is for the sign up
+
+		ImageView imageTrip = new ImageView("trip.gif");
 		imageTrip.setFitHeight(300);
 		imageTrip.setFitWidth(500);
 
-		VBox vTrip=new VBox(50);//trip is for the image
+		VBox vTrip = new VBox(50);// trip is for the image
 		vTrip.setAlignment(Pos.CENTER);
 		vTrip.setPadding(new Insets(15, 15, 15, 15));
 		vTrip.setStyle("-fx-background-color: AliceBlue");
 		vTrip.getChildren().add(imageTrip);
-		
-		Label Name=new Label("Name:");
-		TextField TfName=new TextField();
-		TfName.setPromptText ("enter your Name");
 
-		Label Lname=new Label("Last name:");
-		TextField TfLname=new TextField();
+		Label Name = new Label("Name:");
+		TextField TfName = new TextField();
+		TfName.setPromptText("enter your Name");
+
+		Label Lname = new Label("Last name:");
+		TextField TfLname = new TextField();
 		TfLname.setPromptText("enter your Last name");
 
-		Label Age=new Label("Age:");
-		TextField TfAge=new TextField();
-		TfAge.setPromptText ("enter your age");
+		Label Age = new Label("Age:");
+		TextField TfAge = new TextField();
+		TfAge.setPromptText("enter your age");
 
-		Label passSignUp=new Label("Password:");
-		PasswordField TfPass=new PasswordField();
-		TfPass.setPromptText("password") ;
-		Label LshowPass=new Label("your Pass");
+		Label passSignUp = new Label("Password:");
+		PasswordField TfPass = new PasswordField();
+		TfPass.setPromptText("password");
+		Label LshowPass = new Label("your Pass");
 		LshowPass.setTextFill(Color.BLACK);
 
-		Button ShowPass=new Button("(6)");
-		ShowPass.setOnMousePressed(et->{
-			if(TfPass.getLength()!=0) {
+		Button ShowPass = new Button("(6)");
+		ShowPass.setOnMousePressed(et -> {
+			if (TfPass.getLength() != 0) {
 				LshowPass.setText(TfPass.getText());
 				LshowPass.setTextFill(Color.RED);
 			}
 
 		});
-		ShowPass.setOnMouseReleased(ef->{
+		ShowPass.setOnMouseReleased(ef -> {
 			LshowPass.setText("your Pass");
 			LshowPass.setTextFill(Color.BLACK);
 		});
-		Label address=new Label("address");
-		TextField TfAddress=new TextField();
-		TfAddress.setPromptText ("enter your address");
+		Label address = new Label("address");
+		TextField TfAddress = new TextField();
+		TfAddress.setPromptText("enter your address");
 
-		Label email=new Label("Email");
-		TextField TfEmail=new TextField();
-		TfEmail.setPromptText ("enter your email");
-		
+		Label email = new Label("Email");
+		TextField TfEmail = new TextField();
+		TfEmail.setPromptText("enter your email");
+
 		Label credit = new Label("Credit");
 		TextField TfCredit = new TextField();
 		TfCredit.setPromptText("enter your credit number");
 		Label Cpass = new Label("Password");
 		PasswordField TfCPass = new PasswordField();
 		TfCPass.setPromptText("enter credit password");
-		
-		//creating buttons for the sign up scene
-		Button Save =new Button("Save");
-		Save.setOnAction(e ->{ 
+
+		// creating buttons for the sign up scene
+		Button Save = new Button("Save");
+		Save.setOnAction(e -> {
 			File file1 = new File("SignUp1.txt");
-	   
-	    if (file1.exists()) {
-	      System.out.println("Files already exist");
-	      System.exit(0);
-	    }
 
-	    // Create a file
-	    PrintWriter output1;
-		try { 
-			// Write formatted output to the file
-			output1 = new PrintWriter(file1);
-			output1.println("Name: "+TfName.getText()+"\tlast name: "+TfLname.getText());
-			output1.println("Email: "+TfEmail.getText());
-			output1.println("Age: "+TfAge.getText()+"\tAddress: "+TfAddress.getText());
-			output1.println("Credit number: "+TfCredit.getText());
-			System.out.println("file created successfully!!");
+			if (file1.exists()) {
+				System.out.println("Files already exist");
+				System.exit(0);
+			}
 
-	    
-	    // Close the file
-	    output1.close();
-		} catch (FileNotFoundException e1) {
-			
-			e1.printStackTrace();
-		}
-	  
-	   
-	   
-	   });
+			// Create a file for the signUp
+			PrintWriter output1;
+			try {
+				// Write formatted output to the file
+				output1 = new PrintWriter(file1);
+				output1.println("Name: " + TfName.getText() + "\tlast name: " + TfLname.getText());
+				output1.println("Email: " + TfEmail.getText());
+				output1.println("Age: " + TfAge.getText() + "\tAddress: " + TfAddress.getText());
+				output1.println("Credit number: " + TfCredit.getText());
+				System.out.println("file created successfully!!");
 
-		Button Clear1 =new Button("Clear");
-		Clear1.setOnAction(ep ->{
+				// Close the file
+				output1.close();
+			} catch (FileNotFoundException e1) {
+
+				e1.printStackTrace();
+			}
+
+		});
+
+		Button Clear1 = new Button("Clear");
+		Clear1.setOnAction(ep -> {
 			TfName.clear();
 			TfLname.clear();
 			TfAge.clear();
@@ -237,19 +229,17 @@ public class App extends Application {
 			TfEmail.clear();
 			TfCredit.clear();
 			TfCPass.clear();
-			});
-		
-		Button Cancel = new Button ("Cancel");
+		});
 
-		GridPane Gpane=new GridPane();
+		Button Cancel = new Button("Cancel");
+
+		GridPane Gpane = new GridPane();
 		Gpane.setStyle("-fx-background-color: SteelBlue");
 
 		Gpane.setAlignment(Pos.CENTER);
-		Gpane.setVgap (10);
+		Gpane.setVgap(10);
 		Gpane.setHgap(10);
-		Gpane.setPadding(new Insets(5)) ;
-
-
+		Gpane.setPadding(new Insets(5));
 
 		Gpane.add(Name, 0, 1);
 		Gpane.add(TfName, 1, 1);
@@ -260,383 +250,374 @@ public class App extends Application {
 		Gpane.add(Age, 3, 1);
 		Gpane.add(TfAge, 4, 1);
 
-
 		Gpane.add(address, 3, 2);
 		Gpane.add(TfAddress, 4, 2);
 
 		Gpane.add(email, 0, 3);
 		Gpane.add(TfEmail, 1, 3);
 
-		Gpane.add( passSignUp, 3, 3);
+		Gpane.add(passSignUp, 3, 3);
 		Gpane.add(TfPass, 4, 3);
 
 		Gpane.add(ShowPass, 5, 3);
-		Gpane.add(Save, 1,6);
-		Gpane.add(Cancel, 3,6);
+		Gpane.add(Save, 1, 6);
+		Gpane.add(Cancel, 3, 6);
 		Gpane.add(Clear1, 4, 6);
-		Gpane.add(LshowPass,6,3);
-		
-		Gpane.add(credit,0 ,4 );
-		Gpane.add(TfCredit,1,4);
-		
+		Gpane.add(LshowPass, 6, 3);
+
+		Gpane.add(credit, 0, 4);
+		Gpane.add(TfCredit, 1, 4);
+
 		Gpane.add(Cpass, 3, 4);
 		Gpane.add(TfCPass, 4, 4);
 
-		
-		BorderPane pane =new BorderPane();
+		BorderPane pane = new BorderPane();
 		pane.setCenter(Gpane);
 		pane.setTop(vTrip);
 
-		Scene scene=new Scene(pane,600,600);
+		Scene scene = new Scene(pane, 600, 600);
 
-		hSign.setOnMouseClicked(el ->{
-		window.setScene(scene);
-		window.setResizable(true);
+		hSign.setOnMouseClicked(el -> {
+			window.setScene(scene);
+			window.setResizable(true);
 		});
-	
-		
-		
-		//this is for the menu (Scene3)
-		
-		Button BtReservation=new Button("Reservation");
-		
-		
-		Button BtAircraft=new Button("Aircraft");
-		
-		
-		Button BtPilot=new Button("Pilots");
-		
-		
 
-		Button BtUpdateReservation=new Button("UPDATE RESERVATION");
-		
-		
-		Button BtUpdatePersonalACC=new Button("UPDATE INFO");
-		
-		Button BtReturnToLogin=new Button("Return");//teb3a la scene 3 taba3 l menu
-		
-		BtReturnToLogin.setOnAction(ex->{
+		// this is for the menu (Scene3)
+
+		Button BtReservation = new Button("Reservation");
+
+		Button BtAircraft = new Button("Aircraft");
+
+		Button BtPilot = new Button("Pilots");
+
+		Button BtUpdateReservation = new Button("UPDATE RESERVATION");
+
+		Button BtUpdatePersonalACC = new Button("UPDATE INFO");
+
+		Button BtReturnToLogin = new Button("Return");// teb3a la scene 3 taba3 l menu
+
+		BtReturnToLogin.setOnAction(ex -> {
 			window.setScene(scenee);
 			window.setResizable(false);
 		});
-		
-		
-		
-		GridPane Gpane3=new GridPane();//gpane3 is for the menu
+
+		GridPane Gpane3 = new GridPane();// gpane3 is for the menu
 		Gpane3.setAlignment(Pos.CENTER);
-		Gpane3.setVgap (5);
+		Gpane3.setVgap(5);
 		Gpane3.setHgap(5);
-		Gpane3.setPadding(new Insets(5)) ;
-	
-		 
+		Gpane3.setPadding(new Insets(5));
+
 		Gpane3.add(BtReservation, 0, 0);
-		Gpane3.add( BtAircraft, 0, 1);
-		Gpane3.add( BtPilot, 0, 2);
+		Gpane3.add(BtAircraft, 0, 1);
+		Gpane3.add(BtPilot, 0, 2);
 		Gpane3.add(BtUpdateReservation, 0, 3);
 		Gpane3.add(BtUpdatePersonalACC, 0, 4);
 		Gpane3.add(BtReturnToLogin, 0, 5);
-		
-		ImageView imageMenu=new ImageView("WelcomeMenu.jpg");
+
+		ImageView imageMenu = new ImageView("WelcomeMenu.jpg");
 		imageMenu.setFitHeight(250);
 		imageMenu.setFitWidth(500);
-		
 
-		VBox topMenu=new VBox();
+		VBox topMenu = new VBox();
 		topMenu.setAlignment(Pos.CENTER);
 		topMenu.setPadding(new Insets(15, 15, 15, 15));
 		topMenu.setStyle("-fx-background-color:AliceBlue");
 		topMenu.getChildren().add(imageMenu);
-		
-		VBox bottomMenu=new VBox();
+
+		VBox bottomMenu = new VBox();
 		bottomMenu.setAlignment(Pos.CENTER);
 		bottomMenu.setPadding(new Insets(15, 15, 15, 15));
 		bottomMenu.setStyle("-fx-background-color: DarkBlue");
-      //  bottomMenu.getChildren().add(imageMenuBottom);
-        
-        
-		VBox vbMenu=new VBox();
+		// bottomMenu.getChildren().add(imageMenuBottom);
+
+		VBox vbMenu = new VBox();
 		vbMenu.setAlignment(Pos.CENTER);
 		vbMenu.setPadding(new Insets(15, 15, 15, 15));
 		vbMenu.setStyle("-fx-background-color:SteelBlue");
 		vbMenu.getChildren().add(Gpane3);
-		
-		BorderPane boMenu=new BorderPane();
+
+		BorderPane boMenu = new BorderPane();
 		boMenu.setCenter(vbMenu);
 		boMenu.setTop(topMenu);
 		boMenu.setBottom(bottomMenu);
-		
-		
-		Scene scene3=new Scene(boMenu,750,700);
 
-		
+		Scene scene3 = new Scene(boMenu, 750, 700);
 
-		//this is for the aircraft scenee
-		
-		 String[] CraftTitle = {"FirstAircraft", "SecondAircraft", "ThirdAircraft"};
-	
-				  // Declare an ImageView array for the national flags of 9 countries
-				  ImageView[] ImageViews = {
-				    new ImageView ("A350_XWB.jpeg"),
-				    new ImageView("Boeing_747.jpeg"),
-				    new ImageView("N188TW.jpeg"),
-				  };
+		// this is for the aircraft scenee
 
-				  TextArea txt = new TextArea("");
-				  txt.setText("hello");
-				    ListView<String> lv = new ListView<>(FXCollections.observableArrayList(CraftTitle));
-				    lv.setPrefSize(140, 200);
-				    lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-				   
-				   
-				    // Create a pane to hold image views
-				    FlowPane imagePane = new FlowPane(30, 30);
-				    BorderPane Apane = new BorderPane();
-				    BorderPane BAir = new BorderPane();
-				    Button Cbutton = new Button("choose");
-				   
-             	
-				    Cbutton.setOnAction(act ->
-			    {
-			    	 VBox paneForRadioButtons = new VBox(20);
-			    	    paneForRadioButtons.setPadding(new Insets(5, 5, 5, 5)); 
-			    	    paneForRadioButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: green");
-			    	    
-			    	    RadioButton RdFirst = new RadioButton("First_Aircraft");
-			    	   
-			    	    RadioButton RdSecond = new RadioButton("Second_Aircraft");
-			    	  
-			    	    RadioButton RdThird = new RadioButton("Third_Aircraft");
-			    	 //alert message for
-			    	    Alert alert = new Alert(AlertType. CONFIRMATION);
-			    	    RdFirst.setOnAction(e ->{
-			    	    	RdSecond.setSelected(false);
-			    		   RdThird.setSelected(false);
-			    		   
-			    		   alert.setContentText("you choosed thi first aicraft 100$ will be taken from your account");
-			    		   alert.show();
-			    });
-			    		  
-			    	 
-			    	    RdSecond.setOnAction(e ->{
-				    		   RdFirst.setSelected(false);
-				    		   RdThird.setSelected(false);
-				    		   alert.setContentText("you choosed thi second aicraft 200$ will be taken from your account");
-				    		   alert.show();
-			    	    });
-			    	    RdThird.setOnAction(e ->{
-					    		   RdSecond.setSelected(false);
-					    		   RdFirst.setSelected(false);
-					    		   alert.setContentText("you choosed thi third aicraft 500$ will be taken from your account");
-					    		   alert.show();
-			    	    });
-			    	   
-			    	 
-			    		
-			    	    paneForRadioButtons.getChildren().addAll(RdFirst, RdSecond, RdThird);
-			    	   
-			    	   BAir.setCenter(paneForRadioButtons);
-			    	    
-			    });
-				    Button ReturnB = new Button ("Return");
-				    BAir.setCenter(Cbutton);
-				    BAir.setLeft(ReturnB);
-				    ReturnB.setOnAction(action ->{
-				    window.setScene(scene3);
-				    });
-				    Apane.setLeft(new ScrollPane(lv));   
-				    Apane.setCenter(imagePane);
-				    Apane.setBottom(BAir);
-				    Apane.setRight(txt);
+		String[] CraftTitle = { "FirstAircraft", "SecondAircraft", "ThirdAircraft" };
 
-				    lv.getSelectionModel().selectedItemProperty().addListener(
-				      ov -> { 
-				    	  imagePane.getChildren().clear();
-				        for (Integer i: lv.getSelectionModel().getSelectedIndices()) {
-				          imagePane.getChildren().add(ImageViews[i]);
-				        }
-				    });
-				    Scene Ascene = new Scene(Apane,700,500);
-				  
-				    BtAircraft.setOnAction(en -> {
-				    	window.setScene(Ascene); 
-				    });
-				    
-	
-		Button LoginBtn=new Button("Login") ;
+		// Declare an ImageView array for the national flags of 9 countries
+		ImageView[] ImageViews = { new ImageView("A350_XWB.jpeg"), new ImageView("Boeing_747.jpeg"),
+				new ImageView("N188TW.jpeg"), };
+
+		TextArea txt = new TextArea("");
+
+		ListView<String> lv = new ListView<>(FXCollections.observableArrayList(CraftTitle));
+		lv.setPrefSize(140, 200);
+		lv.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+		lv.setOnMouseClicked(event -> {
+			// Get the index of the item that was clicked
+			int index = lv.getSelectionModel().getSelectedIndex(); // Get the value of the item that was clicked
+
+			// Print the index and value to the console
+			if (index == 0) {
+				txt.clear();
+
+				txt.setText("airplane, also called aeroplane or plane,\n"
+						+ " any of a class of fixed-wing aircraft that is heavier than air, \n"
+						+ "propelled by a screw propeller or a high-velocity jet,\n"
+						+ " and supported by the dynamic reaction of the air against its wings.");
+			} else if (index == 1) {
+				txt.clear();
+				txt.setText("Economy class is another term for the airplane's main cabin\n"
+						+ ", as opposed to premium cabins like business class and first class.\n"
+						+ " Sometimes referred to as coach class, economy class typically makes up the bulk of the seating on a flight.\n"
+						+ " It's the most simple class, with the fewest amenities.");
+			} else if (index == 2) {
+				txt.clear();
+				txt.setText(
+						"Enjoy the state-of-the-art amenities of a VIP aircraft\n which can include lounge areas, master bedrooms\n"
+								+ ", fully equipped bathrooms and even showers.\n The wide cabins of these luxury\n "
+								+ "aircraft guarantee total privacy with separated rooms whenever you want.");
+			} else {
+				txt.clear();
+			}
+
+		});
+
+		// Create a pane to hold image views
+		FlowPane imagePane = new FlowPane(30, 30);
+		BorderPane Apane = new BorderPane();
+		BorderPane BAir = new BorderPane();
+		Button Cbutton = new Button("choose");
+
+		Cbutton.setOnAction(act -> {
+			VBox paneForRadioButtons = new VBox(20);
+			paneForRadioButtons.setPadding(new Insets(5, 5, 5, 5));
+			paneForRadioButtons.setStyle("-fx-border-width: 2px; -fx-border-color: green");
+
+			RadioButton RdFirst = new RadioButton("First_Aircraft");
+
+			RadioButton RdSecond = new RadioButton("Second_Aircraft");
+
+			RadioButton RdThird = new RadioButton("Third_Aircraft");
+			// alert message for
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			RdFirst.setOnAction(e -> {
+				RdSecond.setSelected(false);
+				RdThird.setSelected(false);
+
+				alert.setContentText("you choosed thi first aicraft 100$ will be taken from your account");
+				alert.show();
+			});
+
+			RdSecond.setOnAction(e -> {
+				RdFirst.setSelected(false);
+				RdThird.setSelected(false);
+				alert.setContentText("you choosed thi second aicraft 200$ will be taken from your account");
+				alert.show();
+			});
+			RdThird.setOnAction(e -> {
+				RdSecond.setSelected(false);
+				RdFirst.setSelected(false);
+				alert.setContentText("you choosed thi third aicraft 500$ will be taken from your account");
+				alert.show();
+			});
+
+			paneForRadioButtons.getChildren().addAll(RdFirst, RdSecond, RdThird);
+
+			BAir.setCenter(paneForRadioButtons);
+
+		});
+		Button ReturnB = new Button("Return");
+		BAir.setCenter(Cbutton);
+		BAir.setLeft(ReturnB);
+		ReturnB.setOnAction(action -> {
+			window.setScene(scene3);
+		});
+		Apane.setLeft(new ScrollPane(lv));
+		Apane.setCenter(imagePane);
+		Apane.setBottom(BAir);
+		Apane.setRight(txt);
+
+		lv.getSelectionModel().selectedItemProperty().addListener(ov -> {
+			imagePane.getChildren().clear();
+			for (Integer i : lv.getSelectionModel().getSelectedIndices()) {
+				imagePane.getChildren().add(ImageViews[i]);
+			}
+		});
+		Scene Ascene = new Scene(Apane, 700, 500);
+
+		BtAircraft.setOnAction(en -> {
+			window.setScene(Ascene);
+		});
+
+		Button LoginBtn = new Button("Login");
 		grid.add(LoginBtn, 1, 3);
-		
-		LoginBtn.setOnAction(e ->{
-		    
-	    	window.setScene(scene3);
-	    	window.setResizable(false);
+
+		LoginBtn.setOnAction(e -> {
+
+			window.setScene(scene3);
+			window.setResizable(false);
 		});
 
-		
-		
-		
-		Button Clear=new Button("Clear") ;
+		Button Clear = new Button("Clear");
 		grid.add(Clear, 2, 3);
-		Clear.setOnAction(es ->{
-		    txtUser.clear();
-		    pwBox.clear();
-		    
+		Clear.setOnAction(es -> {
+			txtUser.clear();
+			pwBox.clear();
+
 		});
 
-		
-		//cancel button on the sign up scene
-		Cancel.setOnAction(ed ->{
-			  RadioButton Sure = new RadioButton("Sure");
-			    RadioButton No = new RadioButton("No");
-			    Gpane.add(Sure,3 , 7);
+		// cancel button on the sign up scene
+		Cancel.setOnAction(ed -> {
+			RadioButton Sure = new RadioButton("Sure");
+			RadioButton No = new RadioButton("No");
+			Gpane.add(Sure, 3, 7);
 			Gpane.add(No, 3, 8);
-			Sure.setOnAction(ev ->{
+			Sure.setOnAction(ev -> {
 				window.setScene(scenee);
 			});
-			No.setOnAction(eve->{
+			No.setOnAction(eve -> {
 				window.setScene(scene);
 			});
 		});
 
+		window.setTitle("MARP Airlines");
+		window.setScene(scenee);
+		window.show();
+		window.setResizable(false);
+
+		// reservation scene(scene 4)
+		VBox VRadio = new VBox(5);
+		RadioButton RdVip = new RadioButton("VIP");
+		RadioButton RdFistClass = new RadioButton("FirtClass");
+		RadioButton RdRegular = new RadioButton("Regular");
+		VRadio.setAlignment(Pos.CENTER);
+		VRadio.getChildren().addAll(RdVip, RdFistClass, RdRegular);
 		
-		 window.setTitle("MARP Airlines");
-		 window.setScene(scenee) ;
-		 window.show();
-		 window.setResizable(false);
+		
+		RdVip.setOnAction(e -> {
+			RdFistClass.setSelected(false);
+			RdRegular.setSelected(false);
+		});
 
-	//reservation scene(scene 4)
-		 VBox VRadio = new VBox(5);
-         RadioButton RdVip =new RadioButton("VIP");
-     RadioButton RdFistClass =new RadioButton("FirtClass");
-         RadioButton RdRegular =new RadioButton("Regular");
-         VRadio.setAlignment(Pos.CENTER);
-         VRadio.getChildren().addAll( RdVip,RdFistClass,RdRegular); 
+		RdFistClass.setOnAction(e -> {
+			RdVip.setSelected(false);
+			RdRegular.setSelected(false);
+		});
+		
+		RdRegular.setOnAction(e -> {
+			RdVip.setSelected(false);
+			RdFistClass.setSelected(false);
+		});
+		
+		VBox vbdesign = new VBox();
 
-         VBox vbdesign=new VBox();
+		vbdesign.setStyle("-fx-border-width: 2px; -fx-border-color: Blue");
+		vbdesign.setStyle("-fx-background-color:SteelBlue");
+		vbdesign.setOpacity(0.5);
 
-         vbdesign.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
-         vbdesign.setStyle("-fx-background-color:SteelBlue");
-         vbdesign.setOpacity(0.5);
+		StackPane sdesignr = new StackPane();
+		sdesignr.setPadding(new Insets(5));
+		sdesignr.setAlignment(Pos.CENTER);
+		sdesignr.getChildren().addAll(vbdesign, VRadio);
 
+		VBox VCheck = new VBox(20);
+		CheckBox OneWay = new CheckBox("One way");
+		CheckBox TwoWays = new CheckBox("Two Ways");
+		OneWay.setOnAction(e ->{
+		TwoWays.setSelected(false);
+		});
+		TwoWays.setOnAction(e ->{
+			OneWay.setSelected(false);
+			});
+		VCheck.setAlignment(Pos.CENTER);
+		
+		VCheck.getChildren().addAll(OneWay, TwoWays);
 
-         StackPane sdesignr=new StackPane();
-            sdesignr.setPadding(new Insets(5));
-            sdesignr.setAlignment(Pos.CENTER);
-            sdesignr.getChildren().addAll(vbdesign,VRadio);
+		VBox vbdesigno = new VBox();
+		vbdesigno.setStyle("-fx-border-width: 2px; -fx-border-color: Blue");
+		vbdesigno.setStyle("-fx-background-color:SteelBlue");
+		vbdesigno.setOpacity(0.5);
 
+		StackPane sdesign = new StackPane();
+		sdesign.setPadding(new Insets(5));
+		sdesign.setAlignment(Pos.CENTER);
+		sdesign.getChildren().addAll(vbdesigno, VCheck);
 
-         VBox VCheck = new VBox (20);
-        CheckBox OneWay = new CheckBox ("One way");
-        CheckBox TwoWays = new CheckBox ("Two Ways");
-        VCheck.setAlignment(Pos.CENTER);
-        VCheck.getChildren().addAll(OneWay,TwoWays);
+		HBox HbButtons = new HBox(10);
+		Button BtSave = new Button("Save");
 
-        VBox vbdesigno=new VBox();
-        vbdesigno.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
-        vbdesigno.setStyle("-fx-background-color:SteelBlue");
-        vbdesigno.setOpacity(0.5);
+		Button BtCancel = new Button("Cancel");
+		BtCancel.setOnAction(e -> {
+			window.setScene(scene3);
+		});
 
-        StackPane sdesign=new StackPane();
-        sdesign.setPadding(new Insets(5));
-        sdesign.setAlignment(Pos.CENTER);
-        sdesign.getChildren().addAll(vbdesigno,VCheck);
+		HbButtons.setAlignment(Pos.CENTER);
+		HbButtons.setSpacing(5);
+		HbButtons.getChildren().addAll(BtSave, BtCancel);
 
-        HBox HbButtons=new HBox(10);
-        Button BtSave=new Button("Save");
+		ComboBox<String> comboBox = new ComboBox<>();
 
-        Button BtCancel=new Button("Cancel");
-        BtCancel.setOnAction(e ->{
-            window.setScene(scene3);
-        });
+		// Add items to the combo box
+		comboBox.getItems().addAll("Canada", "China", "Denmark", "France", "USA", "Dubai", "Germany");
 
-        HbButtons.setAlignment(Pos.CENTER);
-        HbButtons.setSpacing(5);
-        HbButtons.getChildren().addAll(BtSave,BtCancel);
+		// Set the default value
+		comboBox.setValue("Canada");
 
+		StackPane root = new StackPane();
+		root.getChildren().addAll(comboBox);
 
+		ComboBox<String> comboBoxx = new ComboBox<>();
 
+		comboBoxx.getItems().addAll("Monday,December 4:00 PM, 2022 ", "Tuesday, December 1:00 AM , 2022 ",
+				"Friday,December 8:30 PM,2022", "Wednesday,January 3:20 PM,2023", "Sunday,January 9:20 PM,2023",
+				"Monday,February 5:40 PM,2023", "Saturday,February 6:20 AM,2023");
 
+		// Set the default value
+		comboBoxx.setValue("Monday,December 4:00 PM, 2022 ");
 
-        ComboBox<String> comboBox = new ComboBox<>();
+		StackPane roott = new StackPane();
+		roott.getChildren().addAll(comboBoxx);
+		Label lCountry = new Label("Country:");
+		Label lDate = new Label("Date:");
 
- 
+		GridPane vbCombo = new GridPane();
+		vbCombo.setAlignment(Pos.CENTER);
+		vbCombo.setVgap(10);
+		vbCombo.setHgap(-5);
+		vbCombo.setPadding(new Insets(5));
+		vbCombo.add(lCountry, 0, 0);
+		vbCombo.add(root, 1, 0);
+		vbCombo.add(lDate, 0, 1);
+		vbCombo.add(roott, 1, 1);
 
-        
+		Image image = new Image("Travell.jpg");
 
- 
+		BackgroundImage backgroundImage = new BackgroundImage(image, null, null, null, null);
+		Background background = new Background(backgroundImage);
+		// pane.setBackground(background);
 
-        // Add items to the combo box
-        comboBox.getItems().addAll("Canada", "China", "Denmark","France", 
-          "USA", "Dubai", "Germany");
+		BorderPane BpReserv = new BorderPane();
+		BpReserv.setLeft(sdesignr);
+		BpReserv.setRight(sdesign);
+		BpReserv.setCenter(vbCombo);
+		BpReserv.setBackground(background);
 
- 
+		BpReserv.setBottom(HbButtons);
 
- 
-
-        // Set the default value
-        comboBox.setValue("Canada");
-
- 
-
-
-        StackPane root = new StackPane();
-        root.getChildren().addAll(comboBox);
-
-        ComboBox<String> comboBoxx = new ComboBox<>();
-
-        comboBoxx.getItems().addAll("Monday,December 4:00 PM, 2022 ", "Tuesday, December 1:00 AM , 2022 ", "Friday,December 8:30 PM,2022","Wednesday,January 3:20 PM,2023", 
-                "Sunday,January 9:20 PM,2023", "Monday,February 5:40 PM,2023", "Saturday,February 6:20 AM,2023");
-
- 
-
- 
-
-              // Set the default value
-              comboBoxx.setValue("Monday,December 4:00 PM, 2022 ");
-
- 
-
-
-              StackPane roott = new StackPane();
-              roott.getChildren().addAll(comboBoxx);
-              Label lCountry=new Label("Country:");
-              Label lDate=new Label("Date:");
-
-              GridPane vbCombo=new GridPane();
-              vbCombo.setAlignment(Pos.CENTER);
-              vbCombo.setVgap(10);
-              vbCombo.setHgap(-5);
-              vbCombo.setPadding(new Insets(5));
-              vbCombo.add(lCountry, 0, 0);
-              vbCombo.add(root, 1, 0);
-              vbCombo.add(lDate, 0, 1);
-              vbCombo.add(roott, 1, 1);
-
-
-        Image image = new Image("Travell.jpg");
-
-        BackgroundImage backgroundImage = new BackgroundImage(image, null, null, null, null);
-        Background background = new Background(backgroundImage);
-       // pane.setBackground(background);
-
-
-
-        BorderPane BpReserv=new BorderPane();
-        BpReserv.setLeft( sdesignr);
-        BpReserv.setRight(sdesign);
-        BpReserv.setCenter(vbCombo);
-        BpReserv.setBackground(background);
-
-        BpReserv.setBottom(HbButtons);
-
-    Scene ResScene = new Scene(BpReserv,600,500);
-        BtReservation.setOnAction( acte ->{
-        window.setScene(ResScene);
-        });
+		Scene ResScene = new Scene(BpReserv, 600, 500);
+		BtReservation.setOnAction(acte -> {
+			window.setScene(ResScene);
+		});
 	}
 
-public static void main(String [] args) {
-	launch(args);
+	public static void main(String[] args) {
+		launch(args);
 
-}
+	}
 
 }

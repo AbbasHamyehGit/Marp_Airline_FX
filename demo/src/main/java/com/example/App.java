@@ -736,7 +736,7 @@ public class App extends Application {
 			   Images.setSpacing(25);
 			   Images.getChildren().addAll(lb1,lb2,lb3);
 			   
-			 
+			 Images.setStyle("-fx-background-color:SteelBlue");
 			   
 			   HBox Buttons = new HBox();
 			  
@@ -745,7 +745,8 @@ public class App extends Application {
 			   Buttons.setPadding(new Insets(30,40,50,50));
 			   Buttons.setAlignment(Pos.CENTER);
 			   Buttons.getChildren().addAll(BtReturn);
-			   
+
+			    Buttons.setStyle("-fx-background-color:DarkBlue");
 			   BtReturn.setOnAction(e ->{
 			   window.setScene(scene3);
 			   });
@@ -753,7 +754,7 @@ public class App extends Application {
 			   box.getChildren().addAll(Images ,Buttons);
 			   box.setAlignment(Pos.CENTER);
 			   box.setSpacing(15);
-			   
+			   box.setStyle("-fx-background-color:SteelBlue");
 			  
 			  
 			   Scene PilotScene = new Scene(box, 800, 700);

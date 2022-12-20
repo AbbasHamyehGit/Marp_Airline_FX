@@ -31,9 +31,10 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -327,7 +328,7 @@ public class App extends Application {
 		Gpane3.setHgap(5);
 		Gpane3.setPadding(new Insets(5)) ;
 	
-		
+		 
 		Gpane3.add(BtReservation, 0, 0);
 		Gpane3.add( BtAircraft, 0, 1);
 		Gpane3.add( BtPilot, 0, 2);
@@ -504,48 +505,134 @@ public class App extends Application {
 
 	//reservation scene(scene 4)
 		 VBox VRadio = new VBox(5);
-		 RadioButton RdVip =new RadioButton("VIP");
-	 RadioButton RdFistClass =new RadioButton("FirtClass");
-		 RadioButton RdRegular =new RadioButton("Regular");
-		 
-	 VRadio.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
-	 VRadio.setStyle("-fx-background-color:SteelBlue");
-		 VRadio.setAlignment(Pos.CENTER);
-		 VRadio.getChildren().addAll( RdVip,RdFistClass,RdRegular); 
-		 
-        
-        
-		 VBox VCheck = new VBox (20);
+         RadioButton RdVip =new RadioButton("VIP");
+     RadioButton RdFistClass =new RadioButton("FirtClass");
+         RadioButton RdRegular =new RadioButton("Regular");
+         VRadio.setAlignment(Pos.CENTER);
+         VRadio.getChildren().addAll( RdVip,RdFistClass,RdRegular); 
+
+         VBox vbdesign=new VBox();
+
+         vbdesign.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
+         vbdesign.setStyle("-fx-background-color:SteelBlue");
+         vbdesign.setOpacity(0.5);
+
+
+         StackPane sdesignr=new StackPane();
+            sdesignr.setPadding(new Insets(5));
+            sdesignr.setAlignment(Pos.CENTER);
+            sdesignr.getChildren().addAll(vbdesign,VRadio);
+
+
+         VBox VCheck = new VBox (20);
         CheckBox OneWay = new CheckBox ("One way");
         CheckBox TwoWays = new CheckBox ("Two Ways");
-        VCheck.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
-        VCheck.setStyle("-fx-background-color:SteelBlue");
         VCheck.setAlignment(Pos.CENTER);
         VCheck.getChildren().addAll(OneWay,TwoWays);
-        
-        HBox HbButtons=new HBox();
+
+        VBox vbdesigno=new VBox();
+        vbdesigno.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
+        vbdesigno.setStyle("-fx-background-color:SteelBlue");
+        vbdesigno.setOpacity(0.5);
+
+        StackPane sdesign=new StackPane();
+        sdesign.setPadding(new Insets(5));
+        sdesign.setAlignment(Pos.CENTER);
+        sdesign.getChildren().addAll(vbdesigno,VCheck);
+
+        HBox HbButtons=new HBox(10);
         Button BtSave=new Button("Save");
+
         Button BtCancel=new Button("Cancel");
         BtCancel.setOnAction(e ->{
-        	window.setScene(scene3);
+            window.setScene(scene3);
         });
-        HbButtons.setStyle ("-fx-border-width: 2px; -fx-border-color: Blue");
-        HbButtons.setStyle("-fx-background-color:SteelBlue");
+
         HbButtons.setAlignment(Pos.CENTER);
+        HbButtons.setSpacing(5);
         HbButtons.getChildren().addAll(BtSave,BtCancel);
+
+
+
+
+
+        ComboBox<String> comboBox = new ComboBox<>();
+
+ 
+
         
+
+ 
+
+        // Add items to the combo box
+        comboBox.getItems().addAll("Canada", "China", "Denmark","France", 
+          "USA", "Dubai", "Germany");
+
+ 
+
+ 
+
+        // Set the default value
+        comboBox.setValue("Canada");
+
+ 
+
+
+        StackPane root = new StackPane();
+        root.getChildren().addAll(comboBox);
+
+        ComboBox<String> comboBoxx = new ComboBox<>();
+
+        comboBoxx.getItems().addAll("Monday,December 4:00 PM, 2022 ", "Tuesday, December 1:00 AM , 2022 ", "Friday,December 8:30 PM,2022","Wednesday,January 3:20 PM,2023", 
+                "Sunday,January 9:20 PM,2023", "Monday,February 5:40 PM,2023", "Saturday,February 6:20 AM,2023");
+
+ 
+
+ 
+
+              // Set the default value
+              comboBoxx.setValue("Monday,December 4:00 PM, 2022 ");
+
+ 
+
+
+              StackPane roott = new StackPane();
+              roott.getChildren().addAll(comboBoxx);
+              Label lCountry=new Label("Country:");
+              Label lDate=new Label("Date:");
+
+              GridPane vbCombo=new GridPane();
+              vbCombo.setAlignment(Pos.CENTER);
+              vbCombo.setVgap(10);
+              vbCombo.setHgap(-5);
+              vbCombo.setPadding(new Insets(5));
+              vbCombo.add(lCountry, 0, 0);
+              vbCombo.add(root, 1, 0);
+              vbCombo.add(lDate, 0, 1);
+              vbCombo.add(roott, 1, 1);
+
+
+        Image image = new Image("Travell.jpg");
+
+        BackgroundImage backgroundImage = new BackgroundImage(image, null, null, null, null);
+        Background background = new Background(backgroundImage);
+       // pane.setBackground(background);
+
+
+
         BorderPane BpReserv=new BorderPane();
-        BpReserv.setLeft(VRadio);
-        BpReserv.setRight(VCheck);
-        
+        BpReserv.setLeft( sdesignr);
+        BpReserv.setRight(sdesign);
+        BpReserv.setCenter(vbCombo);
+        BpReserv.setBackground(background);
+
         BpReserv.setBottom(HbButtons);
-    
-	Scene ResScene = new Scene(BpReserv,300,400);
-		BtReservation.setOnAction( acte ->{
-		window.setScene(ResScene);
-		});
- }
-	
+
+    Scene ResScene = new Scene(BpReserv,600,500);
+        BtReservation.setOnAction( acte ->{
+        window.setScene(ResScene);
+        });
+	}
 
 public static void main(String [] args) {
 	launch(args);

@@ -1,0 +1,462 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "project-MARP_bd9d763a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "project MARP_28c8f27a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewResrv",
+            "request": "launch",
+            "mainClass": "TableViewResrv",
+            "projectName": "project MARP_28c8f27a",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch EncryptionKey",
+            "request": "launch",
+            "mainClass": "EncryptionKey",
+            "projectName": "project-marp_298f2c07",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "project-marp_298f2c07",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch home",
+            "request": "launch",
+            "mainClass": "home",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainWrite",
+            "request": "launch",
+            "mainClass": "MainWrite",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainRead",
+            "request": "launch",
+            "mainClass": "MainRead",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TextAreaDemo",
+            "request": "launch",
+            "mainClass": "TextAreaDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch SliderDemo",
+            "request": "launch",
+            "mainClass": "SliderDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ListViewDemo",
+            "request": "launch",
+            "mainClass": "ListViewDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ComboBoxDemo",
+            "request": "launch",
+            "mainClass": "ComboBoxDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch CheckBoxDemo",
+            "request": "launch",
+            "mainClass": "CheckBoxDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ttt",
+            "request": "launch",
+            "mainClass": "ttt",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main1",
+            "request": "launch",
+            "mainClass": "Main1",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch RadioButtonDemo",
+            "request": "launch",
+            "mainClass": "RadioButtonDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TextFieldTableView",
+            "request": "launch",
+            "mainClass": "TextFieldTableView",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch taw",
+            "request": "launch",
+            "mainClass": "taw",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewSample",
+            "request": "launch",
+            "mainClass": "Tables.TableViewSample",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch tab",
+            "request": "launch",
+            "mainClass": "src.src.tab",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch tableview",
+            "request": "launch",
+            "mainClass": "tableview",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch MediaDemo",
+            "request": "launch",
+            "mainClass": "MediaDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Attach",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "<debug port of the debuggee>",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TextFieldDemo",
+            "request": "launch",
+            "mainClass": "TextFieldDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch gui",
+            "request": "launch",
+            "mainClass": "gui",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch LabelWithGraphic",
+            "request": "launch",
+            "mainClass": "LabelWithGraphic",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch reader",
+            "request": "launch",
+            "mainClass": "reader",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ButtonDemo",
+            "request": "launch",
+            "mainClass": "ButtonDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestRandomAccessFile",
+            "request": "launch",
+            "mainClass": "TestRandomAccessFile",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestObjectStreamForArray",
+            "request": "launch",
+            "mainClass": "TestObjectStreamForArray",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestObjectOutputStream",
+            "request": "launch",
+            "mainClass": "TestObjectOutputStream",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestFileStream",
+            "request": "launch",
+            "mainClass": "TestFileStream",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewSample3",
+            "request": "launch",
+            "mainClass": "TableViewSample3",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReadData",
+            "request": "launch",
+            "mainClass": "ReadData",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestCircleWithRadiusException",
+            "request": "launch",
+            "mainClass": "TestCircleWithRadiusException",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewSample2",
+            "request": "launch",
+            "mainClass": "TableViewSample2",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewSample1",
+            "request": "launch",
+            "mainClass": "TableViewSample1",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TableViewSample",
+            "request": "launch",
+            "mainClass": "TableViewSample",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch student",
+            "request": "launch",
+            "mainClass": "student",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShowUncheckedWarning",
+            "request": "launch",
+            "mainClass": "ShowUncheckedWarning",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Pair",
+            "request": "launch",
+            "mainClass": "Pair",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnyWildCardDemo",
+            "request": "launch",
+            "mainClass": "AnyWildCardDemo",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReadFileFromURL",
+            "request": "launch",
+            "mainClass": "ReadFileFromURL",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReplaceText",
+            "request": "launch",
+            "mainClass": "ReplaceText",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch WebCrawler",
+            "request": "launch",
+            "mainClass": "WebCrawler",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch WriteData",
+            "request": "launch",
+            "mainClass": "WriteData",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch WriteDataWithAutoClose",
+            "request": "launch",
+            "mainClass": "WriteDataWithAutoClose",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestFileClass",
+            "request": "launch",
+            "mainClass": "TestFileClass",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestObjectInputStream",
+            "request": "launch",
+            "mainClass": "TestObjectInputStream",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestDataStream",
+            "request": "launch",
+            "mainClass": "TestDataStream",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Copy",
+            "request": "launch",
+            "mainClass": "Copy",
+            "projectName": "final exam_efbcb6bd"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "final exam_efbcb6bd",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "project-final_f784370e",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "project-final_7f742e1",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"C:/javafx-sdk-19/lib\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
